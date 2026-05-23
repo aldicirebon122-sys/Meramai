@@ -1,203 +1,694 @@
-<!-- ========================= -->
-<!-- FLIPBOOK MENU SECTION -->
-<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="id">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<style>
+  <title>MERAMAI Coffee & Eatery</title>
 
-.flipbook-section{
-  padding:120px 20px;
-  background:#f8f6f1;
-}
+  <!-- PAGE FLIP -->
 
-.flipbook-title{
-  text-align:center;
-  font-size:48px;
-  color:#b89255;
-  margin-bottom:60px;
-  letter-spacing:3px;
-}
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css"/>
 
-#flipbook{
-  width:100%;
-  max-width:1000px;
-  height:700px;
-  margin:auto;
-}
+  <style>
 
-.page{
-  background:white;
-  overflow:hidden;
-  border-radius:10px;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:Arial,sans-serif;
+    }
 
-.page img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    body{
+      background:#f8f6f1;
+      color:#111;
+      overflow-x:hidden;
+    }
 
-.page-cover{
-  background:#111;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
-}
+    img{
+      width:100%;
+      display:block;
+    }
 
-.page-cover img{
-  width:180px;
-  margin-bottom:30px;
-}
+    /* SCROLLBAR */
 
-.page-cover h1{
-  font-size:52px;
-  margin-bottom:20px;
-  letter-spacing:4px;
-}
+    ::-webkit-scrollbar{
+      width:8px;
+    }
 
-.page-cover p{
-  color:#d6b57a;
-  line-height:1.8;
-  max-width:500px;
-}
+    ::-webkit-scrollbar-thumb{
+      background:#c8a96b;
+      border-radius:20px;
+    }
 
-@media(max-width:768px){
+    /* POPUP */
 
-  #flipbook{
-    height:520px;
-  }
+    #popup{
+      position:fixed;
+      inset:0;
+      background:rgba(255,255,255,0.7);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      animation:fadeIn 1s;
+    }
 
-  .page-cover h1{
-    font-size:34px;
-  }
+    .popup-box{
+      width:90%;
+      max-width:420px;
+      background:white;
+      border-radius:35px;
+      padding:45px 35px;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,0.08);
+      animation:popupUp 1s;
+    }
 
-}
+    .popup-logo{
+      width:120px;
+      margin:auto;
+      margin-bottom:25px;
+    }
 
-</style>
+    .popup-title{
+      font-size:38px;
+      letter-spacing:5px;
+      margin-bottom:15px;
+    }
 
-<section class="flipbook-section">
+    .popup-text{
+      color:#9a7b47;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
 
-  <div class="flipbook-title">
-    Digital Menu Book
+    .popup-btn{
+      border:none;
+      background:linear-gradient(135deg,#c8a96b,#e0c48c);
+      color:white;
+      padding:15px 34px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:0.35s;
+      font-size:15px;
+      box-shadow:0 10px 25px rgba(200,169,107,0.25);
+    }
+
+    .popup-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      width:100%;
+      height:100vh;
+      object-fit:cover;
+      animation:zoomHero 12s infinite alternate;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.22);
+    }
+
+    .hero-content{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+      z-index:2;
+    }
+
+    .hero-logo{
+      width:170px;
+      margin-bottom:28px;
+      animation:fadeUp 1.4s;
+    }
+
+    .hero-title{
+      font-size:56px;
+      letter-spacing:4px;
+      margin-bottom:20px;
+      text-shadow:0 10px 30px rgba(0,0,0,0.25);
+      animation:fadeUp 1.8s;
+    }
+
+    .hero-desc{
+      max-width:700px;
+      line-height:1.9;
+      color:#f7e7c6;
+      margin-bottom:38px;
+      font-size:18px;
+      animation:fadeUp 2.2s;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      justify-content:center;
+      animation:fadeUp 2.6s;
+    }
+
+    .hero-buttons a{
+      text-decoration:none;
+      color:white;
+      padding:15px 28px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(8px);
+      transition:0.35s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .hero-buttons a:hover{
+      background:white;
+      color:#111;
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+
+    .section{
+      max-width:1350px;
+      margin:auto;
+      padding:110px 24px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:44px;
+      color:#b89255;
+      margin-bottom:65px;
+      position:relative;
+    }
+
+    .section-title::after{
+      content:"";
+      width:90px;
+      height:3px;
+      background:#d5b378;
+      display:block;
+      margin:18px auto 0;
+      border-radius:20px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+
+    .gallery img{
+      height:420px;
+      object-fit:cover;
+      border-radius:32px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:translateY(-8px) scale(1.02);
+    }
+
+    /* ABOUT */
+
+    .about-card{
+      width:100%;
+      max-width:950px;
+      margin:auto;
+      border-radius:35px;
+      overflow:hidden;
+      background:white;
+      box-shadow:0 18px 50px rgba(0,0,0,0.06);
+    }
+
+    /* MENU BUTTON */
+
+    .menu-button-box{
+      text-align:center;
+    }
+
+    .menu-button{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      padding:18px 34px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#c8a96b,#e0c48c);
+      color:white;
+      font-size:17px;
+      box-shadow:0 12px 28px rgba(200,169,107,0.25);
+      transition:0.35s;
+    }
+
+    .menu-button:hover{
+      transform:translateY(-5px);
+    }
+
+    /* FLIPBOOK */
+
+    .flipbook-section{
+      padding:110px 24px;
+      background:#f8f6f1;
+    }
+
+    #flipbook{
+      width:100%;
+      max-width:1000px;
+      height:700px;
+      margin:auto;
+    }
+
+    .page{
+      background:white;
+      overflow:hidden;
+    }
+
+    .page img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:white;
+      padding:100px 24px;
+      text-align:center;
+      border-top:1px solid rgba(200,169,107,0.12);
+    }
+
+    .footer-logo{
+      width:90px;
+      margin:auto;
+      margin-bottom:30px;
+    }
+
+    .footer-title{
+      font-size:34px;
+      color:#b89255;
+      letter-spacing:5px;
+      margin-bottom:15px;
+    }
+
+    .footer-desc{
+      color:#777;
+      line-height:1.9;
+      margin-bottom:40px;
+    }
+
+    .footer-buttons{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .footer-buttons a{
+      text-decoration:none;
+      color:#111;
+      padding:14px 24px;
+      border-radius:999px;
+      border:1px solid rgba(200,169,107,0.18);
+      transition:0.35s;
+      background:white;
+      box-shadow:0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .footer-buttons a:hover{
+      background:#c8a96b;
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    .copyright{
+      margin-top:40px;
+      color:#999;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+
+    @keyframes popupUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes zoomHero{
+      from{
+        transform:scale(1.05);
+      }
+      to{
+        transform:scale(1.12);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero-title{
+        font-size:38px;
+      }
+
+      .hero-desc{
+        font-size:15px;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+      .gallery img{
+        height:300px;
+      }
+
+      #flipbook{
+        height:520px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- POPUP -->
+
+  <div id="popup">
+
+    <div class="popup-box">
+
+      <img src="Logo-Meramai1.png" class="popup-logo">
+
+      <div class="popup-title">
+        Welcome
+      </div>
+
+      <div class="popup-text">
+        Selamat datang di<br>
+        MERAMAI Coffee & Eatery
+      </div>
+
+      <button class="popup-btn" onclick="closePopup()">
+        Explore Now
+      </button>
+
+    </div>
+
   </div>
 
-  <div id="flipbook">
+  <!-- HERO -->
 
-    <!-- COVER -->
+  <section class="hero">
 
-    <div class="page page-cover">
+    <img src="Front_Building.png" class="hero-bg">
 
-      <img src="Logo-Meramai1.png">
+    <div class="hero-overlay"></div>
 
-      <h1>MERAMAI</h1>
+    <div class="hero-content">
 
-      <p>
-        Coffee & Eatery<br><br>
+      <img src="Logo-Meramai1.png" class="hero-logo">
+
+      <div class="hero-title">
+        MERAMAI Coffee & Eatery
+      </div>
+
+      <div class="hero-desc">
 
         Tempat dimana kopi,
         suasana, dan cerita
         bertemu menjadi satu.
-      </p>
+
+        <br><br>
+
+        Nikmati pengalaman ngopi
+        dengan ambience hangat,
+        aesthetic, dan penuh kenyamanan.
+
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://wa.me/628981243869" target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+          Google Maps
+        </a>
+
+      </div>
 
     </div>
 
-    <!-- ABOUT -->
+  </section>
 
-    <div class="page">
+  <!-- OUR PLACE -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Our Place
+    </div>
+
+    <div class="gallery">
+
+      <img src="Front_Building.png">
+
+      <img src="Front_Left.png">
+
+      <img src="Interior-Bar.png">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section">
+
+    <div class="section-title">
+      About MERAMAI
+    </div>
+
+    <div class="about-card">
       <img src="2.-About-Us.jpg">
     </div>
 
-    <!-- FOOD -->
+  </section>
 
-    <div class="page">
-      <img src="3.-Food-Series.jpg">
+  <!-- MENU BUTTON -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Explore Our Menu
     </div>
 
-    <div class="page">
-      <img src="4.-Food-Series-Menu-1.jpg">
+    <div class="menu-button-box">
+
+      <a href="#menu-book" class="menu-button">
+        📖 Open Menu Book
+      </a>
+
     </div>
 
-    <div class="page">
-      <img src="5.-Food-Series-Menu-2.jpg">
+  </section>
+
+  <!-- FLIPBOOK -->
+
+  <section class="flipbook-section" id="menu-book">
+
+    <div class="section-title">
+      Digital Menu Book
     </div>
 
-    <div class="page">
-      <img src="6.-Food-Series-Menu-3.jpg">
+    <div id="flipbook">
+
+      <div class="page">
+        <img src="1.-Cover.jpg">
+      </div>
+
+      <div class="page">
+        <img src="3.-Food-Series.jpg">
+      </div>
+
+      <div class="page">
+        <img src="4.-Food-Series-Menu-1.jpg">
+      </div>
+
+      <div class="page">
+        <img src="5.-Food-Series-Menu-2.jpg">
+      </div>
+
+      <div class="page">
+        <img src="6.-Food-Series-Menu-3.jpg">
+      </div>
+
+      <div class="page">
+        <img src="7.-Snack-Series.jpg">
+      </div>
+
+      <div class="page">
+        <img src="8.-Snack-Series-Menu-1.jpg">
+      </div>
+
+      <div class="page">
+        <img src="9.-Snack-Series-Menu-2.jpg">
+      </div>
+
+      <div class="page">
+        <img src="10.-Snack-Series-Menu-3.jpg">
+      </div>
+
+      <div class="page">
+        <img src="11.-Coffee-Series.jpg">
+      </div>
+
+      <div class="page">
+        <img src="12.-Coffee-Series-Menu-1.jpg">
+      </div>
+
+      <div class="page">
+        <img src="13.-Non-Coffee-Series.jpg">
+      </div>
+
+      <div class="page">
+        <img src="14.-Non-Coffee-Series-Menu-1.jpg">
+      </div>
+
+      <div class="page">
+        <img src="15.-Closing-Page.jpg">
+      </div>
+
     </div>
 
-    <!-- SNACK -->
+  </section>
 
-    <div class="page">
-      <img src="7.-Snack-Series.jpg">
+  <!-- FOOTER -->
+
+  <footer>
+
+    <img src="Logo-Meramai1.png" class="footer-logo">
+
+    <div class="footer-title">
+      MERAMAI
     </div>
 
-    <div class="page">
-      <img src="8.-Snack-Series-Menu-1.jpg">
+    <div class="footer-desc">
+
+      Coffee & Eatery<br>
+      Cirebon, Indonesia
+
     </div>
 
-    <div class="page">
-      <img src="9.-Snack-Series-Menu-2.jpg">
+    <div class="footer-buttons">
+
+      <a href="https://wa.me/628981243869" target="_blank">
+        WhatsApp
+      </a>
+
+      <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+        Google Maps
+      </a>
+
     </div>
 
-    <div class="page">
-      <img src="10.-Snack-Series-Menu-3.jpg">
+    <div class="copyright">
+      © 2026 MERAMAI Coffee & Eatery
     </div>
 
-    <!-- COFFEE -->
+  </footer>
 
-    <div class="page">
-      <img src="11.-Coffee-Series.jpg">
-    </div>
+  <!-- SCRIPT -->
 
-    <div class="page">
-      <img src="12.-Coffee-Series-Menu-1.jpg">
-    </div>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 
-    <!-- NON COFFEE -->
+  <script>
 
-    <div class="page">
-      <img src="13.-Non-Coffee-Series.jpg">
-    </div>
+    function closePopup(){
+      document.getElementById("popup").style.display = "none";
+    }
 
-    <div class="page">
-      <img src="14.-Non-Coffee-Series-Menu-1.jpg">
-    </div>
+    const pageFlip = new St.PageFlip(
+      document.getElementById("flipbook"),
+      {
+        width:500,
+        height:700,
+        size:"stretch",
+        minWidth:315,
+        maxWidth:1000,
+        minHeight:420,
+        maxHeight:1350,
+        showCover:true,
+        maxShadowOpacity:0.5,
+        mobileScrollSupport:true
+      }
+    );
 
-    <!-- CLOSING -->
+    pageFlip.loadFromHTML(
+      document.querySelectorAll(".page")
+    );
 
-    <div class="page">
-      <img src="15.-Closing-Page.jpg">
-    </div>
+  </script>
 
-  </div>
+</body>
 
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
-
-<script>
-
-const pageFlip = new St.PageFlip(
-  document.getElementById("flipbook"),
-  {
-    width:500,
-    height:700,
-    size:"stretch",
-    minWidth:315,
-    maxWidth:1000,
-    minHeight:420,
-    maxHeight:1350,
-    maxShadowOpacity:0.5,
-    showCover:true,
-    mobileScrollSupport:true
-  }
-);
-
-pageFlip.loadFromHTML(document.querySelectorAll(".page"));
-
-</script>
+</html>
