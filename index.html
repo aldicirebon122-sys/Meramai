@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MERAMAI Coffee & Eatery</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f6f1;
+      color:#111;
+      overflow-x:hidden;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    /* POPUP */
+
+    #welcome-popup{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+    }
+
+    .popup-box{
+      background:white;
+      width:90%;
+      max-width:400px;
+      border-radius:30px;
+      padding:40px 30px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .popup-logo{
+      width:120px;
+      margin:auto;
+      margin-bottom:20px;
+    }
+
+    .popup-title{
+      font-size:34px;
+      letter-spacing:4px;
+      margin-bottom:10px;
+    }
+
+    .popup-subtitle{
+      color:#8d6b2f;
+      margin-bottom:25px;
+    }
+
+    .enter-btn{
+      border:none;
+      background:#111;
+      color:white;
+      padding:14px 28px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:16px;
+    }
+
+    .enter-btn:hover{
+      opacity:0.85;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+    }
+
+    .hero-image{
+      width:100%;
+      height:100vh;
+      object-fit:cover;
+      filter:brightness(0.7);
+    }
+
+    .hero-content{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-logo{
+      width:140px;
+      margin-bottom:20px;
+    }
+
+    .hero-title{
+      font-size:58px;
+      letter-spacing:5px;
+      margin-bottom:15px;
+    }
+
+    .hero-subtitle{
+      color:#e7d3a3;
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .hero-buttons a{
+      text-decoration:none;
+      color:white;
+      padding:14px 24px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter:blur(5px);
+      transition:0.3s;
+    }
+
+    .hero-buttons a:hover{
+      background:white;
+      color:black;
+    }
+
+    /* SECTION */
+
+    .section{
+      max-width:1200px;
+      margin:auto;
+      padding:90px 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      color:#8d6b2f;
+      margin-bottom:50px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .gallery img{
+      height:350px;
+      object-fit:cover;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .gallery img:hover{
+      transform:translateY(-5px);
+    }
+
+    /* CARD */
+
+    .card{
+      background:white;
+      border-radius:30px;
+      overflow:hidden;
+      margin-bottom:35px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+    }
+
+    .footer-title{
+      font-size:28px;
+      color:#e7d3a3;
+      margin-bottom:10px;
+    }
+
+    .footer-links{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:white;
+      border:1px solid rgba(255,255,255,0.2);
+      padding:12px 22px;
+      border-radius:999px;
+      transition:0.3s;
+    }
+
+    .footer-links a:hover{
+      background:white;
+      color:black;
+    }
+
+    @media(max-width:768px){
+
+      .hero-title{
+        font-size:40px;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
+
+      .gallery img{
+        height:250px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- POPUP -->
+
+  <div id="welcome-popup">
+
+    <div class="popup-box">
+
+      <img src="logo-meramai.png" class="popup-logo">
+
+      <div class="popup-title">
+        MERAMAI
+      </div>
+
+      <div class="popup-subtitle">
+        Coffee & Eatery
+      </div>
+
+      <button class="enter-btn" onclick="closePopup()">
+        Explore
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <img src="Front_Building.png" class="hero-image">
+
+    <div class="hero-content">
+
+      <img src="logo-meramai.png" class="hero-logo">
+
+      <div class="hero-title">
+        MERAMAI
+      </div>
+
+      <div class="hero-subtitle">
+        Sebuah titik temu untuk semua.
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://wa.me/628981243869" target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+          Maps
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Our Place
+    </div>
+
+    <div class="gallery">
+
+      <img src="Front_Left.png">
+
+      <img src="Interior-Bar.png">
+
+      <img src="1.-Cover.jpg">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section">
+
+    <div class="section-title">
+      About MERAMAI
+    </div>
+
+    <div class="card">
+      <img src="2.-About-Us.jpg">
+    </div>
+
+  </section>
+
+  <!-- FOOD -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Food Series
+    </div>
+
+    <div class="card">
+      <img src="3.-Food-Series.jpg">
+    </div>
+
+    <div class="card">
+      <img src="4.-Food-Series-Menu-1.jpg">
+    </div>
+
+    <div class="card">
+      <img src="5.-Food-Series-Menu-2.jpg">
+    </div>
+
+    <div class="card">
+      <img src="6.-Food-Series-Menu-3.jpg">
+    </div>
+
+  </section>
+
+  <!-- SNACK -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Snack Series
+    </div>
+
+    <div class="card">
+      <img src="7.-Snack-Series.jpg">
+    </div>
+
+    <div class="card">
+      <img src="8.-Snack-Series-Menu-1.jpg">
+    </div>
+
+    <div class="card">
+      <img src="9.-Snack-Series-Menu-2.jpg">
+    </div>
+
+    <div class="card">
+      <img src="10.-Snack-Series-Menu-3.jpg">
+    </div>
+
+  </section>
+
+  <!-- COFFEE -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Coffee Series
+    </div>
+
+    <div class="card">
+      <img src="11.-Coffee-Series.jpg">
+    </div>
+
+    <div class="card">
+      <img src="12.-Coffee-Series-Menu-1.jpg">
+    </div>
+
+  </section>
+
+  <!-- NON COFFEE -->
+
+  <section class="section">
+
+    <div class="section-title">
+      Non Coffee Series
+    </div>
+
+    <div class="card">
+      <img src="13.-Non-Coffee-Series.jpg">
+    </div>
+
+    <div class="card">
+      <img src="14.-Non-Coffee-Series-Menu-1.jpg">
+    </div>
+
+  </section>
+
+  <!-- CLOSING -->
+
+  <section class="section">
+
+    <div class="card">
+      <img src="15.-Closing-Page.jpg">
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-title">
+      MERAMAI Coffee & Eatery
+    </div>
+
+    <p>
+      Cirebon, Indonesia
+    </p>
+
+    <div class="footer-links">
+
+      <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://wa.me/628981243869" target="_blank">
+        WhatsApp
+      </a>
+
+      <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+        Google Maps
+      </a>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    function closePopup(){
+      document.getElementById("welcome-popup").style.display = "none";
+    }
+
+  </script>
+
+</body>
+
+</html>
