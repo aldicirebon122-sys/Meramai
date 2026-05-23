@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>MERAMAI Coffee & Eatery</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -33,17 +33,16 @@ top:0;
 left:0;
 width:100%;
 z-index:999;
-background:rgba(255,255,255,.94);
-backdrop-filter:blur(8px);
-border-bottom:1px solid rgba(201,161,93,.12);
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(201,161,93,.15);
 }
 
 .navbar{
-max-width:100%;
-padding:14px 18px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+padding:14px 18px;
 }
 
 .logo{
@@ -68,18 +67,19 @@ color:#c8a15d;
 .hero{
 position:relative;
 width:100%;
-min-height:100vh;
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:120px 24px 90px;
 text-align:center;
 overflow:hidden;
+padding:0 20px;
 }
 
 .hero-bg{
 position:absolute;
-inset:0;
+top:0;
+left:0;
 width:100%;
 height:100%;
 object-fit:cover;
@@ -88,25 +88,29 @@ object-fit:cover;
 .overlay{
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.38);
+background:rgba(0,0,0,.22);
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
 .hero-logo{
-width:120px;
-margin-bottom:24px;
+width:170px;
+margin-bottom:30px;
 }
 
 .hero-text{
-font-size:18px;
+font-size:17px;
 line-height:2;
 color:#fff;
 font-weight:300;
+max-width:95%;
 }
 
 /* ================= SECTION ================= */
@@ -116,20 +120,20 @@ padding:80px 22px;
 }
 
 .section-sub{
-font-size:14px;
+font-size:13px;
 letter-spacing:8px;
 text-align:center;
 color:#c8a15d;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 .section-title{
 font-family:'Cormorant Garamond',serif;
-font-size:60px;
+font-size:58px;
 line-height:1;
 text-align:center;
 color:#c8a15d;
-margin-bottom:36px;
+margin-bottom:38px;
 }
 
 /* ================= ABOUT ================= */
@@ -137,29 +141,28 @@ margin-bottom:36px;
 .about{
 display:flex;
 flex-direction:column;
-gap:26px;
+gap:28px;
 }
 
 .about img{
 width:100%;
 height:auto;
-object-fit:contain;
-border-radius:28px;
 display:block;
-background:#f8f5ef;
+border-radius:30px;
+object-fit:contain;
 }
 
 .about-text h3{
 font-family:'Cormorant Garamond',serif;
-font-size:34px;
+font-size:42px;
 line-height:1.2;
 color:#c8a15d;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
 .about-text p{
-font-size:14px;
-line-height:2.1;
+font-size:15px;
+line-height:2.2;
 color:#666;
 }
 
@@ -168,15 +171,16 @@ color:#666;
 .gallery-grid{
 display:grid;
 grid-template-columns:1fr;
-gap:16px;
-margin-top:34px;
+gap:18px;
+margin-top:30px;
 }
 
 .gallery-grid img{
 width:100%;
-height:260px;
+height:240px;
 object-fit:cover;
 border-radius:24px;
+display:block;
 }
 
 /* ================= MENU ================= */
@@ -190,7 +194,7 @@ margin-top:32px;
 
 .menu-card img{
 width:100%;
-border-radius:24px;
+border-radius:26px;
 display:block;
 }
 
@@ -200,16 +204,16 @@ display:block;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:10px;
-margin-top:20px;
+margin-top:18px;
 }
 
 .contact-box{
-background:#ffffff;
+background:#fff;
 padding:14px 10px;
 border-radius:18px;
 text-align:center;
-box-shadow:0 4px 18px rgba(0,0,0,.04);
 border:1px solid rgba(201,161,93,.12);
+box-shadow:0 4px 16px rgba(0,0,0,.04);
 }
 
 .contact-box h3{
@@ -230,25 +234,26 @@ color:#666;
 .footer{
 background:#ffffff;
 padding:50px 22px;
+margin-top:30px;
 border-top:1px solid rgba(201,161,93,.15);
 }
 
 .footer-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:24px;
+gap:26px;
 }
 
 .footer h4{
 font-family:'Cormorant Garamond',serif;
-font-size:26px;
+font-size:28px;
 color:#c8a15d;
 margin-bottom:10px;
 }
 
 .footer p{
 font-size:13px;
-line-height:1.9;
+line-height:2;
 color:#666;
 }
 
@@ -271,21 +276,26 @@ gap:14px;
 font-size:12px;
 }
 
-.section-title{
-font-size:44px;
-}
-
 .hero-logo{
-width:110px;
+width:150px;
 }
 
 .hero-text{
-font-size:15px;
+font-size:16px;
 line-height:1.9;
 }
 
+.section-title{
+font-size:46px;
+}
+
 .about-text h3{
-font-size:28px;
+font-size:34px;
+}
+
+.about-text p{
+font-size:14px;
+line-height:2;
 }
 
 .gallery-grid img{
