@@ -1,528 +1,638 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MERAMAI Coffee & Eatery</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
-    overflow-x:hidden;
+scroll-behavior:smooth;
+overflow-x:hidden;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#f8f5ef;
-    overflow-x:hidden;
-    color:#222;
+font-family:'Poppins',sans-serif;
+background:#f8f5ef;
+overflow-x:hidden;
+color:#222;
 }
 
 /* ================= NAVBAR ================= */
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    padding:14px 16px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,.15);
-    backdrop-filter:blur(2px);
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:12px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.18);
+backdrop-filter:blur(4px);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.logo-left{
-    width:42px;
+.nav-logo{
+width:42px;
+height:auto;
+object-fit:contain;
 }
 
 .nav-menu{
-    display:flex;
-    gap:16px;
+display:flex;
+gap:16px;
+align-items:center;
 }
 
 .nav-menu a{
-    text-decoration:none;
-    color:white;
-    font-size:13px;
-    font-weight:500;
+text-decoration:none;
+color:#fff;
+font-size:13px;
+font-weight:500;
+letter-spacing:.5px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    position:relative;
-    width:100%;
-    height:100vh;
-    overflow:hidden;
+position:relative;
+width:100%;
+height:100vh;
+min-height:760px;
+overflow:hidden;
 }
 
-.hero-bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.hero img.bg{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.42);
 }
 
 .hero-content{
-    position:relative;
-    z-index:5;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 24px 80px;
+position:relative;
+z-index:5;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 26px 70px;
 }
 
-.hero-top-logo{
-    width:120px;
-    margin-bottom:32px;
+.center-logo{
+width:120px;
+margin-bottom:30px;
+object-fit:contain;
+}
+
+.hero-title{
+font-family:'Cormorant Garamond',serif;
+font-size:78px;
+font-weight:600;
+letter-spacing:6px;
+line-height:1;
+color:#d7b06a;
+margin-bottom:12px;
+}
+
+.hero-sub{
+font-family:'Cormorant Garamond',serif;
+font-size:22px;
+letter-spacing:7px;
+color:#fff;
+margin-bottom:40px;
 }
 
 .hero-desc{
-    color:white;
-    font-size:17px;
-    line-height:2;
-    max-width:340px;
-    margin-bottom:38px;
+max-width:650px;
+font-size:17px;
+line-height:2;
+color:#fff;
+margin-bottom:42px;
 }
 
 .hero-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
-    flex-wrap:wrap;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .hero-buttons a{
-    background:#c9a256;
-    color:white;
-    text-decoration:none;
-    padding:14px 28px;
-    border-radius:999px;
-    font-size:15px;
-    font-weight:600;
-    min-width:140px;
-    text-align:center;
+text-decoration:none;
+background:#c9a256;
+color:#fff;
+padding:15px 30px;
+border-radius:999px;
+font-weight:600;
+font-size:15px;
+min-width:150px;
+transition:.3s;
+}
+
+.hero-buttons a:hover{
+transform:translateY(-3px);
 }
 
 /* ================= SECTION ================= */
 
-section{
-    padding:70px 22px;
+.section{
+padding:85px 24px;
 }
 
 .section-sub{
-    text-align:center;
-    color:#c9a256;
-    font-size:12px;
-    letter-spacing:4px;
-    margin-bottom:12px;
+text-align:center;
+font-size:12px;
+letter-spacing:5px;
+color:#c9a256;
+margin-bottom:10px;
 }
 
 .section-title{
-    text-align:center;
-    font-size:38px;
-    font-family:'Cormorant Garamond',serif;
-    margin-bottom:40px;
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+margin-bottom:50px;
 }
 
 /* ================= ABOUT ================= */
 
-.about{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:28px;
-    align-items:center;
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center;
+max-width:1200px;
+margin:auto;
 }
 
-.about img{
-    width:100%;
-    border-radius:24px;
+.about-grid img{
+width:100%;
+border-radius:26px;
+display:block;
 }
 
-.about-text h3{
-    font-size:38px;
-    margin-bottom:16px;
-    font-family:'Cormorant Garamond',serif;
+.about-text h2{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+margin-bottom:18px;
 }
 
 .about-line{
-    width:70px;
-    height:2px;
-    background:#c9a256;
-    margin-bottom:20px;
+width:70px;
+height:2px;
+background:#c9a256;
+margin-bottom:24px;
 }
 
 .about-text p{
-    color:#666;
-    line-height:2;
+line-height:2;
+font-size:16px;
+color:#666;
 }
 
 /* ================= GALLERY ================= */
 
 .gallery-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:16px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .gallery-grid img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-    border-radius:22px;
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:24px;
+display:block;
 }
 
 /* ================= CONTACT ================= */
 
 .contact-row{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:18px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .contact-card{
-    background:white;
-    border-radius:24px;
-    padding:28px 24px;
-    border:1px solid #eee3cf;
-    text-decoration:none;
-    box-shadow:0 10px 30px rgba(0,0,0,.04);
+background:#fff;
+border-radius:28px;
+padding:36px 28px;
+border:1px solid #eee2ce;
+box-shadow:0 10px 30px rgba(0,0,0,.04);
 }
 
 .contact-card h3{
-    font-size:34px;
-    margin-bottom:18px;
-    color:#c9a256;
-    font-family:'Cormorant Garamond',serif;
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+color:#c9a256;
+margin-bottom:16px;
 }
 
 .contact-card p{
-    color:#777;
-    line-height:1.9;
-    margin-bottom:18px;
+font-size:15px;
+line-height:2;
+color:#666;
+margin-bottom:20px;
 }
 
 .contact-card span{
-    color:#c9a256;
-    font-weight:700;
-    font-size:20px;
+font-size:20px;
+font-weight:700;
+color:#c9a256;
 }
 
 /* ================= MENU ================= */
 
-.menu-wrapper{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:22px;
+.menu-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px;
 }
 
-.menu-wrapper img{
-    width:100%;
-    border-radius:24px;
-    display:block;
+.menu-grid img{
+width:100%;
+border-radius:24px;
+display:block;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#111;
-    padding:60px 24px 30px;
-    color:white;
+background:#111;
+padding:70px 24px 40px;
+color:#fff;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:34px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
 }
 
 .footer-logo{
-    width:170px;
-    margin-bottom:16px;
+width:170px;
+margin-bottom:18px;
 }
 
 .footer-title{
-    color:#c9a256;
-    font-size:26px;
-    margin-bottom:14px;
-    font-family:'Cormorant Garamond',serif;
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+margin-bottom:16px;
+color:#d7b06a;
 }
 
 .footer-text{
-    color:#ddd;
-    line-height:2;
-    font-size:14px;
+font-size:14px;
+line-height:2;
+color:#ddd;
 }
 
-/* ================= DESKTOP ================= */
+/* ================= MOBILE ================= */
 
-@media(min-width:768px){
+@media(max-width:768px){
 
-    .nav-menu{
-        gap:28px;
-    }
+.navbar{
+padding:12px 14px;
+}
 
-    .hero-top-logo{
-        width:150px;
-    }
+.nav-logo{
+width:34px;
+}
 
-    .hero-desc{
-        max-width:650px;
-        font-size:18px;
-    }
+.nav-menu{
+gap:12px;
+}
 
-    .about{
-        grid-template-columns:1fr 1fr;
-    }
+.nav-menu a{
+font-size:11px;
+}
 
-    .gallery-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
+.hero{
+height:100vh;
+min-height:720px;
+}
 
-    .contact-row{
-        grid-template-columns:repeat(3,1fr);
-    }
+.center-logo{
+width:82px;
+margin-bottom:24px;
+}
 
-    .menu-wrapper{
-        grid-template-columns:repeat(2,1fr);
-    }
+.hero-title{
+font-size:52px;
+letter-spacing:4px;
+}
 
-    .footer-grid{
-        grid-template-columns:repeat(4,1fr);
-    }
+.hero-sub{
+font-size:16px;
+letter-spacing:4px;
+margin-bottom:28px;
+}
+
+.hero-desc{
+font-size:15px;
+line-height:1.9;
+max-width:320px;
+margin-bottom:34px;
+}
+
+.hero-buttons{
+gap:12px;
+}
+
+.hero-buttons a{
+min-width:130px;
+padding:14px 18px;
+font-size:14px;
+}
+
+.section{
+padding:70px 18px;
+}
+
+.section-title{
+font-size:38px;
+margin-bottom:34px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+gap:26px;
+}
+
+.about-text h2{
+font-size:38px;
+}
+
+.about-text p{
+font-size:14px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-grid img{
+height:240px;
+}
+
+.contact-row{
+grid-template-columns:1fr;
+}
+
+.contact-card{
+padding:28px 22px;
+}
+
+.contact-card h3{
+font-size:34px;
+}
+
+.menu-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
 
 }
 
 </style>
 </head>
+
 <body>
 
 <!-- ================= NAVBAR ================= -->
 
-<nav>
+<div class="navbar">
 
-    <img src="Logo-Meramai1.png" class="logo-left">
+<img src="Logo-Meramai1.png" class="nav-logo">
 
-    <div class="nav-menu">
-        <a href="#home">Beranda</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#menu">Menu</a>
-        <a href="#kontak">Kontak</a>
-    </div>
+<div class="nav-menu">
+<a href="#home">Beranda</a>
+<a href="#tentang">Tentang</a>
+<a href="#gallery">Gallery</a>
+<a href="#menu">Menu</a>
+<a href="#kontak">Kontak</a>
+</div>
 
-</nav>
+</div>
 
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <img src="Front_Building.png" class="hero-bg">
+<img src="Front_Building.png" class="bg">
 
-    <div class="overlay"></div>
+<div class="overlay"></div>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <img src="Logo-Meramai1.png" class="hero-top-logo">
+<img src="Logo-Meramai1.png" class="center-logo">
 
-        <p class="hero-desc">
-            Sebuah tempat untuk menikmati kopi,
-            makanan, dan suasana hangat dalam
-            ruang yang nyaman dan elegan.
-        </p>
+<div class="hero-title">
+MERAMAI
+</div>
 
-        <div class="hero-buttons">
+<div class="hero-sub">
+COFFEE & EATERY
+</div>
 
-            <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
-                Instagram
-            </a>
+<div class="hero-desc">
+Sebuah tempat untuk menikmati kopi,
+makanan, dan suasana hangat dalam
+ruang yang nyaman dan elegan.
+</div>
 
-            <a href="https://wa.me/628981243869" target="_blank">
-                WhatsApp
-            </a>
+<div class="hero-buttons">
 
-            <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
-                Maps
-            </a>
+<a href="https://instagram.com">
+Instagram
+</a>
 
-        </div>
+<a href="https://wa.me/628981243869">
+WhatsApp
+</a>
 
-    </div>
+<a href="https://maps.google.com">
+Maps
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- ================= ABOUT ================= -->
 
-<section id="tentang">
+<section class="section" id="tentang">
 
-    <div class="section-sub">
-        TENTANG
-    </div>
+<div class="section-sub">
+TENTANG
+</div>
 
-    <div class="section-title">
-        MERAMAI
-    </div>
+<div class="section-title">
+MERAMAI
+</div>
 
-    <div class="about">
+<div class="about-grid">
 
-        <img src="2.-About-Us.jpg">
+<img src="2.-About-Us.jpg">
 
-        <div class="about-text">
+<div class="about-text">
 
-            <h3>
-                Meramai Coffee & Eatery
-            </h3>
+<h2>
+Meramai Coffee & Eatery
+</h2>
 
-            <div class="about-line"></div>
+<div class="about-line"></div>
 
-            <p>
-                Tempat di mana rasa, suasana,
-                dan cerita bertemu dalam satu meja.
-                Kami hadir memberikan pengalaman
-                bersantai yang hangat, nyaman,
-                modern, dan berkesan.
-            </p>
+<p>
+Tempat di mana rasa, suasana,
+dan cerita bertemu dalam satu meja.
+Kami hadir memberikan pengalaman
+bersantai yang hangat, nyaman,
+modern, dan berkesan.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <!-- ================= GALLERY ================= -->
 
-<section id="gallery">
+<section class="section" id="gallery">
 
-    <div class="section-sub">
-        GALLERY
-    </div>
+<div class="section-sub">
+GALLERY
+</div>
 
-    <div class="section-title">
-        Suasana Meramai
-    </div>
+<div class="section-title">
+Suasana Meramai
+</div>
 
-    <div class="gallery-grid">
+<div class="gallery-grid">
 
-        <img src="Interior-Bar.png">
-        <img src="Front_Left.png">
-        <img src="Front_Building.png">
+<img src="Interior-Bar.png">
+<img src="Front_Left.png">
+<img src="Front_Building.png">
 
-    </div>
+</div>
 
 </section>
 
 <!-- ================= CONTACT ================= -->
 
-<section id="kontak">
+<section class="section" id="kontak">
 
-    <div class="section-sub">
-        KONTAK
-    </div>
+<div class="section-sub">
+KONTAK
+</div>
 
-    <div class="section-title">
-        Hubungi Kami
-    </div>
+<div class="section-title">
+Hubungi Kami
+</div>
 
-    <div class="contact-row">
+<div class="contact-row">
 
-        <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank" class="contact-card">
+<div class="contact-card">
+<h3>Instagram</h3>
+<p>
+Ikuti update terbaru
+dari Meramai Coffee.
+</p>
+<span>@meramai.id</span>
+</div>
 
-            <h3>Instagram</h3>
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<p>
+Reservasi dan informasi
+lebih lanjut.
+</p>
+<span>0898-1243-869</span>
+</div>
 
-            <p>
-                Ikuti update terbaru
-                dari Meramai Coffee.
-            </p>
+<div class="contact-card">
+<h3>Location</h3>
+<p>
+Jl. Semambu No.88,
+Kabupaten Cirebon.
+</p>
+<span>Open Maps</span>
+</div>
 
-            <span>@meramai.id</span>
-
-        </a>
-
-        <a href="https://wa.me/628981243869" target="_blank" class="contact-card">
-
-            <h3>WhatsApp</h3>
-
-            <p>
-                Reservasi dan informasi
-                lebih lanjut.
-            </p>
-
-            <span>0898-1243-869</span>
-
-        </a>
-
-        <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank" class="contact-card">
-
-            <h3>Location</h3>
-
-            <p>
-                Jl. Semambu No.88,
-                Kabupaten Cirebon.
-            </p>
-
-            <span>Open Maps</span>
-
-        </a>
-
-    </div>
+</div>
 
 </section>
 
 <!-- ================= MENU ================= -->
 
-<section id="menu">
+<section class="section" id="menu">
 
-    <div class="section-sub">
-        MENU
-    </div>
+<div class="section-sub">
+MENU
+</div>
 
-    <div class="section-title">
-        Menu Meramai
-    </div>
+<div class="section-title">
+Menu Meramai
+</div>
 
-    <div class="menu-wrapper">
+<div class="menu-grid">
 
-        <img src="1.-Cover.jpg">
-        <img src="3.-Food-Series.jpg">
-        <img src="4.-Food-Series-Menu-1.jpg">
-        <img src="5.-Food-Series-Menu-2.jpg">
-        <img src="6.-Food-Series-Menu-3.jpg">
-        <img src="7.-Snack-Series.jpg">
-        <img src="8.-Snack-Series-Menu-1.jpg">
-        <img src="9.-Snack-Series-Menu-2.jpg">
-        <img src="10.-Snack-Series-Menu-3.jpg">
-        <img src="11.-Coffee-Series.jpg">
-        <img src="12.-Coffee-Series-Menu-1.jpg">
-        <img src="13.-Non-Coffee-Series.jpg">
-        <img src="14.-Non-Coffee-Series-Menu-1.jpg">
-        <img src="15.-Closing-Page.jpg">
+<img src="1.-Cover.jpg">
+<img src="3.-Food-Series.jpg">
+<img src="4.-Food-Series-Menu-1.jpg">
+<img src="5.-Food-Series-Menu-2.jpg">
+<img src="6.-Food-Series-Menu-3.jpg">
+<img src="7.-Snack-Series.jpg">
+<img src="8.-Snack-Series-Menu-1.jpg">
+<img src="9.-Snack-Series-Menu-2.jpg">
+<img src="10.-Snack-Series-Menu-3.jpg">
+<img src="11.-Coffee-Series.jpg">
+<img src="12.-Coffee-Series-Menu-1.jpg">
+<img src="13.-Non-Coffee-Series.jpg">
+<img src="14.-Non-Coffee-Series-Menu-1.jpg">
+<img src="15.-Closing-Page.jpg">
 
-    </div>
+</div>
 
 </section>
 
@@ -530,59 +640,59 @@ footer{
 
 <footer>
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
-        <div>
+<div>
 
-            <img src="Logo-Meramai2.png" class="footer-logo">
+<img src="Logo-Meramai2.png" class="footer-logo">
 
-            <div class="footer-text">
-                Sebuah tempat untuk menikmati kopi,
-                makanan, dan kebersamaan.
-            </div>
+<div class="footer-text">
+Sebuah tempat untuk menikmati kopi,
+makanan, dan kebersamaan.
+</div>
 
-        </div>
+</div>
 
-        <div>
+<div>
 
-            <div class="footer-title">
-                Jam Operasional
-            </div>
+<div class="footer-title">
+Jam Operasional
+</div>
 
-            <div class="footer-text">
-                Selasa - Sabtu<br>
-                17:00 - 23:00
-            </div>
+<div class="footer-text">
+Selasa - Sabtu<br>
+17:00 - 23:00
+</div>
 
-        </div>
+</div>
 
-        <div>
+<div>
 
-            <div class="footer-title">
-                Kontak
-            </div>
+<div class="footer-title">
+Kontak
+</div>
 
-            <div class="footer-text">
-                0898-1243-869<br>
-                @meramai.id
-            </div>
+<div class="footer-text">
+0898-1243-869<br>
+@meramai.id
+</div>
 
-        </div>
+</div>
 
-        <div>
+<div>
 
-            <div class="footer-title">
-                Lokasi
-            </div>
+<div class="footer-title">
+Lokasi
+</div>
 
-            <div class="footer-text">
-                Jl. Semambu No.88<br>
-                Kabupaten Cirebon
-            </div>
+<div class="footer-text">
+Jl. Semambu No.88<br>
+Kabupaten Cirebon
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </footer>
 
