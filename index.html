@@ -1,4 +1,4 @@
-```html id="fix-meramai-final"
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -41,11 +41,11 @@ justify-content:space-between;
 align-items:center;
 z-index:999;
 background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0));
-backdrop-filter:blur(6px);
+backdrop-filter:blur(5px);
 }
 
 .logo-nav{
-height:38px;
+height:40px;
 object-fit:contain;
 }
 
@@ -54,7 +54,6 @@ display:flex;
 gap:14px;
 align-items:center;
 flex-wrap:wrap;
-justify-content:flex-end;
 }
 
 .nav-links a{
@@ -102,9 +101,11 @@ filter:brightness(.7);
 .hero-overlay{
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom,
+background:linear-gradient(
+to bottom,
 rgba(0,0,0,.15),
-rgba(0,0,0,.55));
+rgba(0,0,0,.55)
+);
 }
 
 .hero-content{
@@ -119,15 +120,15 @@ z-index:5;
 
 .hero-logo{
 width:180px;
-margin-bottom:10px;
+margin-bottom:14px;
 }
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:62px;
+font-size:68px;
 font-weight:700;
 letter-spacing:6px;
-color:#d8b56b;
+color:#d9b46a;
 line-height:1;
 margin-bottom:10px;
 }
@@ -146,7 +147,7 @@ margin:auto;
 font-size:14px;
 line-height:2;
 color:#f1f1f1;
-margin-bottom:30px;
+margin-bottom:32px;
 }
 
 .hero-buttons{
@@ -172,7 +173,11 @@ background:#ddb76e;
 transform:translateY(-3px);
 }
 
-/* ================= SECTION TITLE ================= */
+/* ================= SECTION ================= */
+
+section{
+padding:80px 24px;
+}
 
 .section-title{
 text-align:center;
@@ -193,10 +198,6 @@ font-weight:600;
 }
 
 /* ================= ABOUT ================= */
-
-.about-section{
-padding:80px 24px;
-}
 
 .about-container{
 max-width:1100px;
@@ -227,10 +228,6 @@ color:#555;
 
 /* ================= GALLERY ================= */
 
-.gallery-section{
-padding:0 24px 80px;
-}
-
 .gallery-grid{
 max-width:1100px;
 margin:auto;
@@ -253,10 +250,6 @@ transform:scale(1.03);
 
 /* ================= MENU ================= */
 
-.menu-section{
-padding:0 18px 70px;
-}
-
 .menu-grid{
 max-width:1100px;
 margin:auto;
@@ -271,10 +264,6 @@ display:block;
 }
 
 /* ================= CONTACT ================= */
-
-.contact-section{
-padding:20px 24px 80px;
-}
 
 .contact-grid{
 max-width:1100px;
@@ -378,7 +367,7 @@ width:150px;
 }
 
 .hero-title{
-font-size:50px;
+font-size:52px;
 letter-spacing:4px;
 }
 
@@ -441,7 +430,7 @@ margin:auto auto 18px;
 
 <nav>
 
-<img src="Logo-Meramai1.png" class="logo-nav" alt="Logo">
+<img src="Logo-Meramai1.png" class="logo-nav">
 
 <div class="nav-links">
 <a href="#home">BERANDA</a>
@@ -457,13 +446,13 @@ margin:auto auto 18px;
 
 <section class="hero" id="home">
 
-<img src="Front_Building.png" alt="Meramai">
+<img src="Front_Building.png">
 
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<img src="Logo-Meramai1.png" class="hero-logo" alt="Logo">
+<img src="Logo-Meramai1.png" class="hero-logo">
 
 <h1 class="hero-title">MERAMAI</h1>
 
@@ -499,7 +488,7 @@ Maps
 
 <!-- ================= ABOUT ================= -->
 
-<section class="about-section" id="tentang">
+<section id="tentang">
 
 <div class="section-title">
 <span>TENTANG</span>
@@ -508,7 +497,7 @@ Maps
 
 <div class="about-container">
 
-<img src="Front_Left.png" alt="Front">
+<img src="Front_Left.png">
 
 <div class="about-text">
 
@@ -536,7 +525,7 @@ bertemu teman, hingga menikmati malam santai di Cirebon.
 
 <!-- ================= GALLERY ================= -->
 
-<section class="gallery-section" id="gallery">
+<section id="gallery">
 
 <div class="section-title">
 <span>GALERI</span>
@@ -545,9 +534,9 @@ bertemu teman, hingga menikmati malam santai di Cirebon.
 
 <div class="gallery-grid">
 
-<img src="Interior-Bar.png" alt="">
-<img src="Front_Left.png" alt="">
-<img src="Front_Building.png" alt="">
+<img src="Interior-Bar.png">
+<img src="Front_Left.png">
+<img src="Front_Building.png">
 
 </div>
 
@@ -555,7 +544,7 @@ bertemu teman, hingga menikmati malam santai di Cirebon.
 
 <!-- ================= MENU ================= -->
 
-<section class="menu-section" id="menu">
+<section id="menu">
 
 <div class="section-title">
 <span>MENU BOOK</span>
@@ -586,7 +575,7 @@ bertemu teman, hingga menikmati malam santai di Cirebon.
 
 <!-- ================= CONTACT ================= -->
 
-<section class="contact-section" id="kontak">
+<section id="kontak">
 
 <div class="section-title">
 <span>KONTAK</span>
@@ -652,7 +641,7 @@ Open Maps
 
 <div>
 
-<img src="Logo-Meramai1.png" class="footer-logo" alt="">
+<img src="Logo-Meramai1.png" class="footer-logo">
 
 <p>
 Tempat untuk menikmati kopi,
