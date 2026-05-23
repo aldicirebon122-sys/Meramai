@@ -21,10 +21,10 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#faf7f2;
+background:#fff;
 font-family:'Montserrat',sans-serif;
-color:#222;
 overflow-x:hidden;
+color:#222;
 }
 
 /* ================= NAVBAR ================= */
@@ -34,38 +34,33 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:16px 20px;
+padding:16px 18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(212,175,55,.15);
 }
 
 .logo-nav{
-height:42px;
+height:40px;
 object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:14px;
+gap:12px;
 align-items:center;
 }
 
 .nav-links a{
 text-decoration:none;
 font-size:10px;
-letter-spacing:1px;
 font-weight:600;
-color:#b89146;
-transition:.3s;
-}
-
-.nav-links a:hover{
-opacity:.7;
+letter-spacing:1px;
+color:#c39a4b;
 }
 
 /* ================= HERO ================= */
@@ -75,14 +70,19 @@ position:relative;
 width:100%;
 height:100vh;
 overflow:hidden;
+background:#000;
 }
 
 .hero img{
+position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
 object-fit:cover;
 object-position:center;
-filter:brightness(.72);
+display:block;
+filter:brightness(.68);
 }
 
 .hero-overlay{
@@ -90,8 +90,8 @@ position:absolute;
 inset:0;
 background:linear-gradient(
 to bottom,
-rgba(255,255,255,.05),
-rgba(0,0,0,.38)
+rgba(0,0,0,.15),
+rgba(0,0,0,.45)
 );
 }
 
@@ -113,29 +113,29 @@ margin-bottom:18px;
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:62px;
+font-size:58px;
 font-weight:700;
-letter-spacing:5px;
-color:#f2d28a;
+letter-spacing:4px;
 line-height:1;
+color:#f0cf88;
 margin-bottom:10px;
 }
 
 .hero-sub{
 font-family:'Cormorant Garamond',serif;
-font-size:16px;
+font-size:15px;
 letter-spacing:4px;
 color:#fff;
-margin-bottom:26px;
+margin-bottom:24px;
 }
 
 .hero-desc{
-max-width:600px;
+max-width:550px;
 margin:auto;
 font-size:14px;
 line-height:2;
 color:white;
-margin-bottom:32px;
+margin-bottom:30px;
 }
 
 .hero-buttons{
@@ -147,30 +147,28 @@ flex-wrap:wrap;
 
 .hero-buttons a{
 text-decoration:none;
-padding:13px 24px;
+padding:12px 24px;
 border-radius:40px;
 background:#caa45b;
 color:white;
 font-size:12px;
 font-weight:600;
-transition:.3s;
 box-shadow:0 10px 25px rgba(202,164,91,.3);
-}
-
-.hero-buttons a:hover{
-transform:translateY(-3px);
-background:#ddb96d;
 }
 
 /* ================= SECTION ================= */
 
 section{
-padding:80px 22px;
+padding:80px 0;
+}
+
+.section-inner{
+padding:0 22px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:45px;
+margin-bottom:42px;
 }
 
 .section-title span{
@@ -184,7 +182,6 @@ font-family:'Cormorant Garamond',serif;
 font-size:42px;
 margin-top:10px;
 font-weight:600;
-color:#222;
 }
 
 /* ================= ABOUT ================= */
@@ -194,12 +191,12 @@ max-width:1100px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr;
-gap:32px;
+gap:30px;
 }
 
 .about-container img{
 width:100%;
-border-radius:24px;
+border-radius:22px;
 display:block;
 }
 
@@ -209,9 +206,9 @@ text-align:center;
 
 .about-text h3{
 font-family:'Cormorant Garamond',serif;
-font-size:38px;
+font-size:36px;
+color:#b78d43;
 margin-bottom:18px;
-color:#b89146;
 }
 
 .about-text p{
@@ -223,11 +220,11 @@ color:#555;
 /* ================= GALLERY ================= */
 
 .gallery-grid{
-max-width:1100px;
-margin:auto;
 display:grid;
 grid-template-columns:1fr;
 gap:18px;
+max-width:1100px;
+margin:auto;
 }
 
 .gallery-grid img{
@@ -241,33 +238,33 @@ display:block;
 /* ================= MENU ================= */
 
 .menu-grid{
-max-width:1100px;
-margin:auto;
 display:grid;
 grid-template-columns:1fr;
 gap:18px;
+max-width:1100px;
+margin:auto;
 }
 
 .menu-grid img{
 width:100%;
 display:block;
-border-radius:22px;
-box-shadow:0 8px 30px rgba(0,0,0,.06);
+border-radius:20px;
+box-shadow:0 8px 30px rgba(0,0,0,.05);
 }
 
 /* ================= CONTACT ================= */
 
 .contact-grid{
-max-width:1100px;
-margin:auto;
 display:grid;
 grid-template-columns:1fr;
 gap:18px;
+max-width:1100px;
+margin:auto;
 }
 
 .contact-card{
 background:white;
-padding:32px 24px;
+padding:30px 24px;
 border-radius:24px;
 box-shadow:0 10px 30px rgba(0,0,0,.05);
 border:1px solid rgba(212,175,55,.1);
@@ -275,9 +272,9 @@ border:1px solid rgba(212,175,55,.1);
 
 .contact-card h3{
 font-family:'Cormorant Garamond',serif;
-font-size:32px;
+font-size:30px;
 margin-bottom:14px;
-color:#b89146;
+color:#b78d43;
 }
 
 .contact-card p{
@@ -289,7 +286,7 @@ margin-bottom:14px;
 
 .contact-card a{
 text-decoration:none;
-color:#b89146;
+color:#b78d43;
 font-weight:600;
 }
 
@@ -303,11 +300,11 @@ color:white;
 }
 
 .footer-grid{
-max-width:1100px;
-margin:auto;
 display:grid;
 grid-template-columns:1fr;
 gap:30px;
+max-width:1100px;
+margin:auto;
 text-align:center;
 }
 
@@ -319,7 +316,7 @@ margin:auto auto 16px;
 footer h4{
 font-family:'Cormorant Garamond',serif;
 font-size:28px;
-margin-bottom:12px;
+margin-bottom:10px;
 color:#d8b56b;
 }
 
@@ -330,7 +327,7 @@ color:#ddd;
 }
 
 .copyright{
-margin-top:36px;
+margin-top:35px;
 text-align:center;
 font-size:12px;
 color:#888;
@@ -340,12 +337,12 @@ color:#888;
 
 @media(max-width:480px){
 
-.hero-title{
-font-size:50px;
-}
-
 .hero-logo{
 width:160px;
+}
+
+.hero-title{
+font-size:50px;
 }
 
 .hero-buttons a{
@@ -354,7 +351,7 @@ font-size:11px;
 }
 
 .nav-links{
-gap:10px;
+gap:8px;
 }
 
 .nav-links a{
@@ -440,6 +437,8 @@ Maps
 
 <section id="tentang">
 
+<div class="section-inner">
+
 <div class="section-title">
 <span>TENTANG</span>
 <h2>Meramai Coffee & Eatery</h2>
@@ -455,9 +454,11 @@ Maps
 
 <p>
 Meramai hadir sebagai ruang nyaman untuk menikmati kopi,
-makanan, dan kebersamaan dalam suasana yang hangat,
+makanan, dan kebersamaan dalam suasana hangat,
 modern, dan berkesan.
 </p>
+
+</div>
 
 </div>
 
@@ -468,6 +469,8 @@ modern, dan berkesan.
 <!-- ================= GALLERY ================= -->
 
 <section id="gallery">
+
+<div class="section-inner">
 
 <div class="section-title">
 <span>GALERI</span>
@@ -482,11 +485,15 @@ modern, dan berkesan.
 
 </div>
 
+</div>
+
 </section>
 
 <!-- ================= MENU ================= -->
 
 <section id="menu">
+
+<div class="section-inner">
 
 <div class="section-title">
 <span>MENU BOOK</span>
@@ -513,11 +520,15 @@ modern, dan berkesan.
 
 </div>
 
+</div>
+
 </section>
 
 <!-- ================= CONTACT ================= -->
 
 <section id="kontak">
+
+<div class="section-inner">
 
 <div class="section-title">
 <span>KONTAK</span>
@@ -573,6 +584,8 @@ Open Maps
 
 </div>
 
+</div>
+
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -597,7 +610,7 @@ makanan, dan kebersamaan.
 <h4>Jam Operasional</h4>
 
 <p>
-Setiap Hari<br>
+Selasa - Sabtu<br>
 17.00 - 23.00
 </p>
 
