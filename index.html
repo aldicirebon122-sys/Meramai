@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>MERAMAI Coffee & Eatery</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,8 +19,8 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#f6f2eb;
+font-family:'Montserrat',sans-serif;
+background:#f8f5ef;
 color:#222;
 overflow-x:hidden;
 }
@@ -32,9 +32,692 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 24px;
+padding:18px 20px;
 display:flex;
 justify-content:space-between;
+align-items:center;
+z-index:999;
+background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0));
+backdrop-filter:blur(5px);
+}
+
+.logo-nav{
+height:42px;
+object-fit:contain;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#d6b06a;
+font-size:11px;
+font-weight:500;
+letter-spacing:1px;
+position:relative;
+padding-bottom:4px;
+transition:.3s;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:1px;
+background:#d6b06a;
+transition:.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-links a:hover{
+color:#f3d391;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+filter:brightness(.72);
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,.1),rgba(0,0,0,.55));
+}
+
+.hero-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+text-align:center;
+z-index:10;
+animation:fadeUp 1s ease;
+}
+
+.hero-logo{
+width:200px;
+margin-bottom:14px;
+}
+
+.hero-title{
+font-family:'Cormorant Garamond',serif;
+font-size:74px;
+font-weight:700;
+letter-spacing:6px;
+color:#d8b36b;
+line-height:1;
+margin-bottom:12px;
+}
+
+.hero-sub{
+font-family:'Cormorant Garamond',serif;
+font-size:20px;
+letter-spacing:5px;
+color:#f4dfb2;
+margin-bottom:24px;
+}
+
+.hero-desc{
+max-width:600px;
+margin:auto;
+font-size:14px;
+line-height:2;
+color:#f4f4f4;
+margin-bottom:34px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+text-decoration:none;
+padding:13px 28px;
+border-radius:40px;
+background:#c9a45d;
+color:white;
+font-size:13px;
+font-weight:500;
+letter-spacing:1px;
+transition:.35s;
+box-shadow:0 10px 25px rgba(201,164,93,.3);
+}
+
+.hero-buttons a:hover{
+transform:translateY(-4px);
+background:#ddb76d;
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:80px 24px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title span{
+font-size:12px;
+letter-spacing:3px;
+color:#c79f56;
+}
+
+.section-title h2{
+font-family:'Cormorant Garamond',serif;
+font-size:44px;
+font-weight:600;
+margin-top:10px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.about img{
+width:100%;
+border-radius:18px;
+}
+
+.about-text h3{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+margin-bottom:18px;
+color:#b88b3d;
+}
+
+.about-text p{
+line-height:2;
+font-size:14px;
+color:#555;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+max-width:1200px;
+margin:auto;
+}
+
+.gallery-grid img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:18px;
+transition:.4s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.03);
+}
+
+/* ================= MENU ================= */
+
+.menu-wrapper{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.menu-wrapper img{
+width:100%;
+border-radius:0px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ================= CONTACT ================= */
+
+.contact-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.contact-card{
+background:white;
+padding:35px 26px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-5px);
+}
+
+.contact-card h4{
+font-size:22px;
+margin-bottom:14px;
+font-family:'Cormorant Garamond',serif;
+color:#b88b3d;
+}
+
+.contact-card p{
+font-size:14px;
+line-height:1.8;
+color:#666;
+margin-bottom:16px;
+}
+
+.contact-card a{
+text-decoration:none;
+color:#b88b3d;
+font-weight:600;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#111;
+color:white;
+padding:60px 24px 30px;
+margin-top:80px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.footer-logo{
+width:140px;
+margin-bottom:18px;
+}
+
+footer h4{
+margin-bottom:14px;
+color:#d4aa61;
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+}
+
+footer p{
+font-size:14px;
+line-height:2;
+color:#ddd;
+}
+
+.copyright{
+text-align:center;
+margin-top:40px;
+font-size:13px;
+color:#999;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translate(-50%,-40%);
+}
+to{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+nav{
+padding:16px 14px;
+}
+
+.logo-nav{
+height:34px;
+}
+
+.nav-links{
+gap:10px;
+flex-wrap:wrap;
+justify-content:flex-end;
+}
+
+.nav-links a{
+font-size:10px;
+}
+
+.hero-logo{
+width:170px;
+}
+
+.hero-title{
+font-size:54px;
+letter-spacing:4px;
+}
+
+.hero-sub{
+font-size:15px;
+letter-spacing:3px;
+}
+
+.hero-desc{
+font-size:13px;
+line-height:1.9;
+}
+
+.hero-buttons a{
+padding:11px 22px;
+font-size:12px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.about-text{
+text-align:center;
+}
+
+.about-text h3{
+font-size:38px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-grid img{
+height:260px;
+}
+
+.menu-wrapper{
+grid-template-columns:1fr;
+}
+
+.contact-cards{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-logo{
+margin:auto auto 18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<img src="Logo-Meramai1.png" class="logo-nav">
+
+<div class="nav-links">
+<a href="#home">BERANDA</a>
+<a href="#tentang">TENTANG</a>
+<a href="#gallery">GALERI</a>
+<a href="#menu">MENU</a>
+<a href="#kontak">KONTAK</a>
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<img src="Front_Building.png">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<img src="Logo-Meramai1.png" class="hero-logo">
+
+<h1 class="hero-title">MERAMAI</h1>
+
+<div class="hero-sub">
+COFFEE & EATERY
+</div>
+
+<div class="hero-desc">
+Sebuah titik temu untuk menikmati kopi, makanan,
+dan suasana hangat dalam satu tempat yang nyaman,
+elegan, dan berkesan.
+</div>
+
+<div class="hero-buttons">
+
+<a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+Instagram
+</a>
+
+<a href="https://wa.me/628981243869" target="_blank">
+WhatsApp
+</a>
+
+<a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+Maps
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="tentang">
+
+<div class="section-title">
+<span>TENTANG</span>
+<h2>Meramai Coffee & Eatery</h2>
+</div>
+
+<div class="about">
+
+<img src="Front_Left.png">
+
+<div class="about-text">
+
+<h3>Tempat Bertemu & Bercerita</h3>
+
+<p>
+Meramai hadir sebagai ruang nyaman untuk menikmati waktu bersama.
+Mulai dari kopi pilihan, makanan favorit, hingga suasana hangat
+yang membuat setiap momen terasa lebih berkesan.
+</p>
+
+<br>
+
+<p>
+Dengan desain yang elegan dan suasana yang tenang,
+Meramai menjadi tempat yang cocok untuk bekerja,
+bertemu teman, hingga menikmati malam santai di Kota Cirebon.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<div class="section-title">
+<span>GALERI</span>
+<h2>Suasana Meramai</h2>
+</div>
+
+<div class="gallery-grid">
+
+<img src="Interior-Bar.png">
+<img src="Front_Left.png">
+<img src="Front_Building.png">
+
+</div>
+
+</section>
+
+<!-- ================= MENU ================= -->
+
+<section id="menu">
+
+<div class="section-title">
+<span>MENU BOOK</span>
+<h2>Our Menu</h2>
+</div>
+
+<div class="menu-wrapper">
+
+<img src="1.-Cover.jpg">
+<img src="2.-About-Us.jpg">
+<img src="3.-Food-Series.jpg">
+<img src="4.-Food-Series-Menu-1.jpg">
+<img src="5.-Food-Series-Menu-2.jpg">
+<img src="6.-Food-Series-Menu-3.jpg">
+<img src="7.-Snack-Series.jpg">
+<img src="8.-Snack-Series-Menu-1.jpg">
+<img src="9.-Snack-Series-Menu-2.jpg">
+<img src="10.-Snack-Series-Menu-3.jpg">
+<img src="11.-Coffee-Series.jpg">
+<img src="12.-Coffee-Series-Menu-1.jpg">
+<img src="13.-Non-Coffee-Series.jpg">
+<img src="14.-Non-Coffee-Series-Menu-1.jpg">
+<img src="15.-Closing-Page.jpg">
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="kontak">
+
+<div class="section-title">
+<span>KONTAK</span>
+<h2>Visit & Reservation</h2>
+</div>
+
+<div class="contact-cards">
+
+<div class="contact-card">
+
+<h4>Instagram</h4>
+
+<p>
+Follow social media kami untuk update menu,
+promo, dan suasana terbaru dari Meramai.
+</p>
+
+<a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+@meramai.id
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<h4>WhatsApp</h4>
+
+<p>
+Hubungi kami untuk reservasi tempat,
+informasi menu, atau pertanyaan lainnya.
+</p>
+
+<a href="https://wa.me/628981243869" target="_blank">
+0898-1243-869
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<h4>Location</h4>
+
+<p>
+Jl. Semambu No.88, Tegalwangi,
+Kec. Weru, Kabupaten Cirebon.
+</p>
+
+<a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+Open Maps
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<img src="Logo-Meramai1.png" class="footer-logo">
+
+<p>
+Tempat untuk menikmati kopi,
+makanan, dan kebersamaan
+dalam suasana hangat dan elegan.
+</p>
+
+</div>
+
+<div>
+
+<h4>Jam Operasional</h4>
+
+<p>
+Setiap Hari<br>
+17.00 - 23.00
+</p>
+
+</div>
+
+<div>
+
+<h4>Kontak</h4>
+
+<p>
+0898-1243-869<br>
+@meramai.id
+</p>
+
+</div>
+
+<div>
+
+<h4>Alamat</h4>
+
+<p>
+Jl. Semambu No.88<br>
+Kabupaten Cirebon
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 MERAMAI Coffee & Eatery
+</div>
+
+</footer>
+
+</body>
+</html>justify-content:space-between;
 align-items:center;
 z-index:999;
 background:rgba(0,0,0,0.15);
