@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>MERAMAI Coffee & Eatery</title>
 
@@ -23,16 +24,15 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-/* ===== MOBILE CONTAINER ===== */
+/* CONTAINER */
 
 .container{
-width:100%;
 max-width:430px;
 margin:auto;
 background:#f8f5ef;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 
 .navbar{
 position:fixed;
@@ -41,33 +41,34 @@ left:50%;
 transform:translateX(-50%);
 width:100%;
 max-width:430px;
-z-index:999;
 padding:14px 18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.35);
+z-index:999;
+background:rgba(0,0,0,.28);
 backdrop-filter:blur(6px);
 }
 
 .logo{
 width:34px;
+height:34px;
 object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:16px;
+gap:15px;
 }
 
 .nav-links a{
 text-decoration:none;
 font-size:14px;
-font-weight:500;
 color:white;
+font-weight:500;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
 .hero{
 position:relative;
@@ -75,7 +76,7 @@ height:100vh;
 overflow:hidden;
 }
 
-.hero img.bg{
+.hero img{
 position:absolute;
 inset:0;
 width:100%;
@@ -98,34 +99,34 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:0 26px;
+padding:0 28px;
 }
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:68px;
+font-size:62px;
 line-height:0.9;
 letter-spacing:2px;
-color:#d8b36b;
+color:#d7b16a;
 margin-bottom:12px;
 }
 
 .hero-sub{
 font-family:'Cormorant Garamond',serif;
-font-size:24px;
-letter-spacing:6px;
+font-size:22px;
+letter-spacing:5px;
 color:white;
-margin-bottom:34px;
+margin-bottom:32px;
 }
 
 .hero-text{
-font-size:18px;
+font-size:17px;
 line-height:2;
 color:white;
 max-width:330px;
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 
 .section{
 padding:70px 22px;
@@ -133,28 +134,28 @@ padding:70px 22px;
 
 .section-title{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:38px;
 }
 
 .section-title span{
 font-size:12px;
 letter-spacing:4px;
-color:#c9a45f;
+color:#c8a15d;
 }
 
 .section-title h2{
 font-family:'Cormorant Garamond',serif;
 font-size:42px;
-color:#c9a45f;
-margin-top:10px;
+margin-top:8px;
+color:#c8a15d;
 }
 
-/* ===== ABOUT ===== */
+/* ABOUT */
 
 .about{
 display:flex;
 flex-direction:column;
-gap:24px;
+gap:22px;
 }
 
 .about img{
@@ -166,8 +167,8 @@ border-radius:24px;
 
 .about-text h3{
 font-family:'Cormorant Garamond',serif;
-font-size:38px;
-color:#c9a45f;
+font-size:36px;
+color:#c8a15d;
 margin-bottom:14px;
 }
 
@@ -177,7 +178,7 @@ line-height:2;
 color:#555;
 }
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 
 .gallery{
 display:flex;
@@ -192,26 +193,25 @@ object-fit:cover;
 border-radius:22px;
 }
 
-/* ===== MENU ===== */
+/* MENU */
 
-.menu-grid{
+.menu{
 display:flex;
 flex-direction:column;
 gap:18px;
 }
 
-.menu-grid img{
+.menu img{
 width:100%;
 border-radius:22px;
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:10px;
-margin-top:10px;
 }
 
 .contact-box{
@@ -225,7 +225,7 @@ box-shadow:0 4px 18px rgba(0,0,0,.05);
 .contact-box h3{
 font-family:'Cormorant Garamond',serif;
 font-size:22px;
-color:#c9a45f;
+color:#c8a15d;
 margin-bottom:8px;
 }
 
@@ -235,11 +235,11 @@ line-height:1.7;
 color:#666;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 .footer{
 background:#111;
-padding:55px 22px;
+padding:50px 22px;
 }
 
 .footer-grid{
@@ -251,7 +251,7 @@ gap:24px;
 .footer h4{
 font-family:'Cormorant Garamond',serif;
 font-size:26px;
-color:#d8b36b;
+color:#d7b16a;
 margin-bottom:10px;
 }
 
@@ -262,23 +262,22 @@ color:#ddd;
 }
 
 .copy{
+margin-top:36px;
 text-align:center;
 font-size:12px;
 color:#777;
-margin-top:36px;
 }
 
-/* ===== MOBILE FIX ===== */
+/* MOBILE */
 
 @media(max-width:430px){
 
 .hero-title{
-font-size:58px;
+font-size:56px;
 }
 
 .hero-sub{
 font-size:20px;
-letter-spacing:5px;
 }
 
 .hero-text{
@@ -294,14 +293,6 @@ gap:12px;
 font-size:13px;
 }
 
-.section-title h2{
-font-size:38px;
-}
-
-.about-text h3{
-font-size:34px;
-}
-
 }
 
 </style>
@@ -311,7 +302,7 @@ font-size:34px;
 
 <div class="container">
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
@@ -327,11 +318,11 @@ font-size:34px;
 
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 
 <section class="hero">
 
-<img src="1.-Cover" class="bg">
+<img src="1.-Cover">
 
 <div class="overlay"></div>
 
@@ -355,7 +346,7 @@ dalam ruang yang nyaman dan elegan.
 
 </section>
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
 
 <section class="section">
 
@@ -375,7 +366,7 @@ dalam ruang yang nyaman dan elegan.
 <p>
 Tempat di mana rasa, suasana,
 dan cerita bertemu dalam satu meja.
-Kami hadir untuk memberikan pengalaman
+Kami hadir memberikan pengalaman
 bersantai yang hangat, nyaman,
 dan berkesan.
 </p>
@@ -386,7 +377,7 @@ dan berkesan.
 
 </section>
 
-<!-- ===== GALLERY ===== -->
+<!-- GALLERY -->
 
 <section class="section">
 
@@ -407,7 +398,7 @@ dan berkesan.
 
 </section>
 
-<!-- ===== MENU ===== -->
+<!-- MENU -->
 
 <section class="section">
 
@@ -416,21 +407,37 @@ dan berkesan.
 <h2>Food & Beverage</h2>
 </div>
 
-<div class="menu-grid">
+<div class="menu">
 
 <img src="3.-Food-Series">
 
+<img src="4.-Food-Series-Menu-1">
+
+<img src="5.-Food-Series-Menu-2">
+
+<img src="6.-Food-Series-Menu-3">
+
 <img src="7.-Snack-Series">
+
+<img src="8.-Snack-Series-Menu-1">
+
+<img src="9.-Snack-Series-Menu-2">
+
+<img src="10.-Snack-Series-Menu-3">
 
 <img src="11.-Coffee-Series">
 
+<img src="12.-Coffee-Series-Menu-1">
+
 <img src="13.-Non-Coffee-Series">
+
+<img src="14.-Non-Coffee-Series-Menu-1">
 
 </div>
 
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- CONTACT -->
 
 <section class="section">
 
@@ -460,7 +467,7 @@ dan berkesan.
 
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
