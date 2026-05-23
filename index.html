@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -23,9 +22,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#f7f3ed;
-color:#222;
+background:#ffffff;
 overflow-x:hidden;
+color:#222;
 }
 
 /* ================= NAVBAR ================= */
@@ -35,36 +34,37 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 20px;
+padding:16px 14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
-background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0));
+background:linear-gradient(to bottom,
+rgba(0,0,0,.55),
+rgba(0,0,0,0));
 backdrop-filter:blur(5px);
 }
 
 .logo-nav{
-height:40px;
+height:34px;
 object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:14px;
-align-items:center;
+gap:10px;
 flex-wrap:wrap;
+justify-content:flex-end;
 }
 
 .nav-links a{
 text-decoration:none;
-font-size:11px;
-font-weight:500;
+font-size:9px;
 letter-spacing:1px;
-color:#d9b46a;
-transition:.3s;
+font-weight:500;
+color:#d6b06a;
 position:relative;
-padding-bottom:3px;
+padding-bottom:2px;
 }
 
 .nav-links a::after{
@@ -74,7 +74,7 @@ left:0;
 bottom:0;
 width:0%;
 height:1px;
-background:#d9b46a;
+background:#d6b06a;
 transition:.3s;
 }
 
@@ -86,16 +86,19 @@ width:100%;
 
 .hero{
 position:relative;
+width:100%;
 height:100vh;
 overflow:hidden;
+background:#000;
 }
 
 .hero img{
 width:100%;
-height:100%;
+height:100vh;
 object-fit:cover;
 object-position:center;
-filter:brightness(.7);
+display:block;
+filter:brightness(.65);
 }
 
 .hero-overlay{
@@ -113,41 +116,42 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:90%;
+width:100%;
+padding:0 22px;
 text-align:center;
 z-index:5;
 }
 
 .hero-logo{
-width:180px;
+width:190px;
 margin-bottom:14px;
 }
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:68px;
+font-size:56px;
 font-weight:700;
-letter-spacing:6px;
-color:#d9b46a;
+letter-spacing:4px;
 line-height:1;
+color:#d8b56b;
 margin-bottom:10px;
 }
 
 .hero-sub{
 font-family:'Cormorant Garamond',serif;
-font-size:18px;
-letter-spacing:4px;
-color:#f3ddb0;
-margin-bottom:22px;
+font-size:15px;
+letter-spacing:3px;
+color:#f1d9a3;
+margin-bottom:24px;
 }
 
 .hero-desc{
-max-width:600px;
-margin:auto;
 font-size:14px;
 line-height:2;
-color:#f1f1f1;
-margin-bottom:32px;
+color:#f5f5f5;
+max-width:600px;
+margin:auto;
+margin-bottom:28px;
 }
 
 .hero-buttons{
@@ -161,27 +165,27 @@ flex-wrap:wrap;
 text-decoration:none;
 padding:12px 24px;
 border-radius:40px;
-background:#c8a45a;
+background:#caa457;
 color:white;
-font-size:13px;
+font-size:12px;
 font-weight:500;
 transition:.3s;
 }
 
 .hero-buttons a:hover{
-background:#ddb76e;
+background:#ddb76d;
 transform:translateY(-3px);
 }
 
 /* ================= SECTION ================= */
 
 section{
-padding:80px 24px;
+padding:70px 20px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:45px;
+margin-bottom:40px;
 }
 
 .section-title span{
@@ -192,7 +196,7 @@ color:#c8a45a;
 
 .section-title h2{
 font-family:'Cormorant Garamond',serif;
-font-size:42px;
+font-size:38px;
 margin-top:10px;
 font-weight:600;
 }
@@ -203,8 +207,8 @@ font-weight:600;
 max-width:1100px;
 margin:auto;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+grid-template-columns:1fr;
+gap:30px;
 align-items:center;
 }
 
@@ -213,9 +217,13 @@ width:100%;
 border-radius:20px;
 }
 
+.about-text{
+text-align:center;
+}
+
 .about-text h3{
 font-family:'Cormorant Garamond',serif;
-font-size:42px;
+font-size:34px;
 color:#b88c40;
 margin-bottom:18px;
 }
@@ -229,23 +237,18 @@ color:#555;
 /* ================= GALLERY ================= */
 
 .gallery-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:16px;
 max-width:1100px;
 margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
 }
 
 .gallery-grid img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 border-radius:18px;
-transition:.3s;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.03);
 }
 
 /* ================= MENU ================= */
@@ -254,8 +257,8 @@ transform:scale(1.03);
 max-width:1100px;
 margin:auto;
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+grid-template-columns:1fr;
+gap:18px;
 }
 
 .menu-grid img{
@@ -266,18 +269,18 @@ display:block;
 /* ================= CONTACT ================= */
 
 .contact-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
 max-width:1100px;
 margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
 }
 
 .contact-card{
-background:white;
+background:#fff;
 padding:30px 24px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .contact-card h3{
@@ -289,9 +292,9 @@ margin-bottom:14px;
 
 .contact-card p{
 font-size:14px;
-line-height:1.8;
+line-height:1.9;
 color:#666;
-margin-bottom:14px;
+margin-bottom:16px;
 }
 
 .contact-card a{
@@ -310,16 +313,17 @@ margin-top:40px;
 }
 
 .footer-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:30px;
 max-width:1100px;
 margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
+text-align:center;
 }
 
 .footer-logo{
 width:150px;
-margin-bottom:18px;
+margin:auto auto 18px;
 }
 
 footer h4{
@@ -340,85 +344,6 @@ margin-top:40px;
 text-align:center;
 font-size:12px;
 color:#999;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-nav{
-padding:16px 14px;
-}
-
-.logo-nav{
-height:32px;
-}
-
-.nav-links{
-gap:10px;
-}
-
-.nav-links a{
-font-size:9px;
-}
-
-.hero-logo{
-width:150px;
-}
-
-.hero-title{
-font-size:52px;
-letter-spacing:4px;
-}
-
-.hero-sub{
-font-size:14px;
-letter-spacing:3px;
-}
-
-.hero-desc{
-font-size:13px;
-line-height:1.9;
-}
-
-.hero-buttons a{
-padding:11px 18px;
-font-size:12px;
-}
-
-.about-container{
-grid-template-columns:1fr;
-}
-
-.about-text{
-text-align:center;
-}
-
-.about-text h3{
-font-size:34px;
-}
-
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-.menu-grid{
-grid-template-columns:1fr;
-}
-
-.contact-grid{
-grid-template-columns:1fr;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.footer-logo{
-margin:auto auto 18px;
-}
-
 }
 
 </style>
@@ -507,14 +432,6 @@ Maps
 Meramai hadir sebagai ruang nyaman untuk menikmati waktu bersama.
 Mulai dari kopi pilihan, makanan favorit, hingga suasana hangat
 yang membuat setiap momen terasa lebih berkesan.
-</p>
-
-<br>
-
-<p>
-Dengan desain elegan dan suasana yang tenang,
-Meramai menjadi tempat yang cocok untuk bekerja,
-bertemu teman, hingga menikmati malam santai di Cirebon.
 </p>
 
 </div>
@@ -694,4 +611,3 @@ Kabupaten Cirebon
 
 </body>
 </html>
-```
