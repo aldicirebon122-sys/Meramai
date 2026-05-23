@@ -22,7 +22,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#ffffff;
+background:#fff;
 overflow-x:hidden;
 color:#222;
 }
@@ -34,7 +34,7 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:16px 14px;
+padding:16px 18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -42,44 +42,25 @@ z-index:999;
 background:linear-gradient(to bottom,
 rgba(0,0,0,.55),
 rgba(0,0,0,0));
-backdrop-filter:blur(5px);
 }
 
 .logo-nav{
-height:34px;
+height:38px;
 object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:10px;
-flex-wrap:wrap;
-justify-content:flex-end;
+gap:12px;
+align-items:center;
 }
 
 .nav-links a{
 text-decoration:none;
-font-size:9px;
+font-size:10px;
 letter-spacing:1px;
 font-weight:500;
 color:#d6b06a;
-position:relative;
-padding-bottom:2px;
-}
-
-.nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:0%;
-height:1px;
-background:#d6b06a;
-transition:.3s;
-}
-
-.nav-links a:hover::after{
-width:100%;
 }
 
 /* ================= HERO ================= */
@@ -94,10 +75,9 @@ background:#000;
 
 .hero img{
 width:100%;
-height:100vh;
+height:100%;
 object-fit:cover;
 object-position:center;
-display:block;
 filter:brightness(.65);
 }
 
@@ -106,7 +86,7 @@ position:absolute;
 inset:0;
 background:linear-gradient(
 to bottom,
-rgba(0,0,0,.15),
+rgba(0,0,0,.2),
 rgba(0,0,0,.55)
 );
 }
@@ -117,19 +97,19 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 width:100%;
-padding:0 22px;
+padding:0 24px;
 text-align:center;
 z-index:5;
 }
 
 .hero-logo{
-width:190px;
-margin-bottom:14px;
+width:180px;
+margin-bottom:18px;
 }
 
 .hero-title{
 font-family:'Cormorant Garamond',serif;
-font-size:56px;
+font-size:54px;
 font-weight:700;
 letter-spacing:4px;
 line-height:1;
@@ -141,15 +121,15 @@ margin-bottom:10px;
 font-family:'Cormorant Garamond',serif;
 font-size:15px;
 letter-spacing:3px;
-color:#f1d9a3;
+color:#f3ddb0;
 margin-bottom:24px;
 }
 
 .hero-desc{
 font-size:14px;
 line-height:2;
-color:#f5f5f5;
-max-width:600px;
+color:#fff;
+max-width:500px;
 margin:auto;
 margin-bottom:28px;
 }
@@ -163,9 +143,9 @@ flex-wrap:wrap;
 
 .hero-buttons a{
 text-decoration:none;
-padding:12px 24px;
+padding:12px 22px;
 border-radius:40px;
-background:#caa457;
+background:#c9a357;
 color:white;
 font-size:12px;
 font-weight:500;
@@ -174,18 +154,17 @@ transition:.3s;
 
 .hero-buttons a:hover{
 background:#ddb76d;
-transform:translateY(-3px);
 }
 
 /* ================= SECTION ================= */
 
 section{
-padding:70px 20px;
+padding:70px 22px;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:38px;
 }
 
 .section-title span{
@@ -204,17 +183,17 @@ font-weight:600;
 /* ================= ABOUT ================= */
 
 .about-container{
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr;
-gap:30px;
-align-items:center;
+gap:28px;
 }
 
 .about-container img{
 width:100%;
-border-radius:20px;
+border-radius:18px;
+display:block;
 }
 
 .about-text{
@@ -240,7 +219,7 @@ color:#555;
 display:grid;
 grid-template-columns:1fr;
 gap:16px;
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 }
 
@@ -249,12 +228,13 @@ width:100%;
 height:260px;
 object-fit:cover;
 border-radius:18px;
+display:block;
 }
 
 /* ================= MENU ================= */
 
 .menu-grid{
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr;
@@ -264,6 +244,7 @@ gap:18px;
 .menu-grid img{
 width:100%;
 display:block;
+border-radius:20px;
 }
 
 /* ================= CONTACT ================= */
@@ -271,30 +252,30 @@ display:block;
 .contact-grid{
 display:grid;
 grid-template-columns:1fr;
-gap:20px;
-max-width:1100px;
+gap:18px;
+max-width:1000px;
 margin:auto;
 }
 
 .contact-card{
 background:#fff;
-padding:30px 24px;
+padding:28px 24px;
 border-radius:22px;
 box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .contact-card h3{
 font-family:'Cormorant Garamond',serif;
-font-size:30px;
+font-size:28px;
 color:#b88c40;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 .contact-card p{
 font-size:14px;
 line-height:1.9;
 color:#666;
-margin-bottom:16px;
+margin-bottom:14px;
 }
 
 .contact-card a{
@@ -308,42 +289,73 @@ font-weight:600;
 footer{
 background:#111;
 padding:60px 24px 30px;
+margin-top:30px;
 color:white;
-margin-top:40px;
 }
 
 .footer-grid{
 display:grid;
 grid-template-columns:1fr;
-gap:30px;
-max-width:1100px;
-margin:auto;
+gap:28px;
 text-align:center;
+max-width:1000px;
+margin:auto;
 }
 
 .footer-logo{
-width:150px;
-margin:auto auto 18px;
+width:140px;
+margin:auto auto 16px;
 }
 
 footer h4{
 font-family:'Cormorant Garamond',serif;
 font-size:28px;
-margin-bottom:12px;
+margin-bottom:10px;
 color:#d8b56b;
 }
 
 footer p{
 font-size:14px;
 line-height:2;
-color:#d9d9d9;
+color:#ddd;
 }
 
 .copyright{
-margin-top:40px;
+margin-top:35px;
 text-align:center;
 font-size:12px;
-color:#999;
+color:#888;
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media(max-width:480px){
+
+.hero-title{
+font-size:48px;
+}
+
+.hero-logo{
+width:160px;
+}
+
+.hero-buttons{
+gap:10px;
+}
+
+.hero-buttons a{
+padding:11px 18px;
+font-size:12px;
+}
+
+.nav-links{
+gap:8px;
+}
+
+.nav-links a{
+font-size:9px;
+}
+
 }
 
 </style>
@@ -386,9 +398,9 @@ COFFEE & EATERY
 </div>
 
 <div class="hero-desc">
-Sebuah titik temu untuk menikmati kopi, makanan,
-dan suasana hangat dalam tempat yang nyaman,
-elegan, dan berkesan.
+Sebuah titik temu untuk menikmati kopi,
+makanan, dan suasana hangat
+dalam tempat yang nyaman dan elegan.
 </div>
 
 <div class="hero-buttons">
@@ -429,9 +441,9 @@ Maps
 <h3>Tempat Bertemu & Bercerita</h3>
 
 <p>
-Meramai hadir sebagai ruang nyaman untuk menikmati waktu bersama.
-Mulai dari kopi pilihan, makanan favorit, hingga suasana hangat
-yang membuat setiap momen terasa lebih berkesan.
+Meramai hadir sebagai ruang nyaman untuk menikmati kopi,
+makanan, dan suasana hangat bersama teman,
+keluarga, maupun pasangan.
 </p>
 
 </div>
@@ -506,8 +518,8 @@ yang membuat setiap momen terasa lebih berkesan.
 <h3>Instagram</h3>
 
 <p>
-Follow social media kami untuk update menu,
-promo, dan suasana terbaru dari Meramai.
+Follow social media kami
+untuk update terbaru dari Meramai.
 </p>
 
 <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
@@ -521,8 +533,8 @@ promo, dan suasana terbaru dari Meramai.
 <h3>WhatsApp</h3>
 
 <p>
-Hubungi kami untuk reservasi tempat,
-informasi menu, atau pertanyaan lainnya.
+Hubungi kami untuk reservasi
+atau informasi lainnya.
 </p>
 
 <a href="https://wa.me/628981243869" target="_blank">
@@ -536,8 +548,8 @@ informasi menu, atau pertanyaan lainnya.
 <h3>Location</h3>
 
 <p>
-Jl. Semambu No.88, Tegalwangi,
-Kec. Weru, Kabupaten Cirebon.
+Jl. Semambu No.88,
+Kabupaten Cirebon.
 </p>
 
 <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
@@ -562,8 +574,7 @@ Open Maps
 
 <p>
 Tempat untuk menikmati kopi,
-makanan, dan kebersamaan
-dalam suasana hangat dan elegan.
+makanan, dan kebersamaan.
 </p>
 
 </div>
