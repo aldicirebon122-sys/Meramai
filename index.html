@@ -96,11 +96,9 @@ nav{
     padding:120px 24px 80px;
 }
 
-.hero-main-logo{
-    width:100%;
-    max-width:280px; /* Ukuran logo di HP */
+.hero-top-logo{
+    width:120px;
     margin-bottom:32px;
-    object-fit:contain;
 }
 
 .hero-desc{
@@ -108,6 +106,27 @@ nav{
     font-size:17px;
     line-height:2;
     max-width:340px;
+    margin-bottom:38px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons a{
+    background:#c9a256;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    min-width:140px;
+    text-align:center;
 }
 
 /* ================= SECTION ================= */
@@ -268,8 +287,8 @@ footer{
         gap:28px;
     }
 
-    .hero-main-logo{
-        max-width:450px; /* Ukuran logo di Laptop/PC */
+    .hero-top-logo{
+        width:150px;
     }
 
     .hero-desc{
@@ -303,9 +322,11 @@ footer{
 </head>
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
 
-    <img src="Logo-Meramai1.png" class="logo-left" alt="Logo Kiri">
+    <img src="Logo-Meramai1.png" class="logo-left">
 
     <div class="nav-menu">
         <a href="#home">Beranda</a>
@@ -317,15 +338,17 @@ footer{
 
 </nav>
 
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
 
-    <img src="Front_Building.png" class="hero-bg" alt="Background">
+    <img src="Front_Building.png" class="hero-bg">
 
     <div class="overlay"></div>
 
     <div class="hero-content">
 
-        <img src="Logo-Meramai1.png" class="hero-main-logo" alt="Logo Utama Meramai">
+        <img src="Logo-Meramai1.png" class="hero-top-logo">
 
         <p class="hero-desc">
             Sebuah tempat untuk menikmati kopi,
@@ -333,9 +356,27 @@ footer{
             ruang yang nyaman dan elegan.
         </p>
 
+        <div class="hero-buttons">
+
+            <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+                Instagram
+            </a>
+
+            <a href="https://wa.me/628981243869" target="_blank">
+                WhatsApp
+            </a>
+
+            <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
+                Maps
+            </a>
+
         </div>
 
+    </div>
+
 </section>
+
+<!-- ================= ABOUT ================= -->
 
 <section id="tentang">
 
@@ -349,7 +390,7 @@ footer{
 
     <div class="about">
 
-        <img src="2.-About-Us.jpg" alt="Tentang Meramai">
+        <img src="2.-About-Us.jpg">
 
         <div class="about-text">
 
@@ -373,6 +414,8 @@ footer{
 
 </section>
 
+<!-- ================= GALLERY ================= -->
+
 <section id="gallery">
 
     <div class="section-sub">
@@ -385,13 +428,15 @@ footer{
 
     <div class="gallery-grid">
 
-        <img src="Interior-Bar.png" alt="Interior">
-        <img src="Front_Left.png" alt="Tampak Kiri">
-        <img src="Front_Building.png" alt="Tampak Depan">
+        <img src="Interior-Bar.png">
+        <img src="Front_Left.png">
+        <img src="Front_Building.png">
 
     </div>
 
 </section>
+
+<!-- ================= CONTACT ================= -->
 
 <section id="kontak">
 
@@ -448,6 +493,8 @@ footer{
 
 </section>
 
+<!-- ================= MENU ================= -->
+
 <section id="menu">
 
     <div class="section-sub">
@@ -460,24 +507,26 @@ footer{
 
     <div class="menu-wrapper">
 
-        <img src="1.-Cover.jpg" alt="Cover Menu">
-        <img src="3.-Food-Series.jpg" alt="Food Series">
-        <img src="4.-Food-Series-Menu-1.jpg" alt="Food Menu 1">
-        <img src="5.-Food-Series-Menu-2.jpg" alt="Food Menu 2">
-        <img src="6.-Food-Series-Menu-3.jpg" alt="Food Menu 3">
-        <img src="7.-Snack-Series.jpg" alt="Snack Series">
-        <img src="8.-Snack-Series-Menu-1.jpg" alt="Snack Menu 1">
-        <img src="9.-Snack-Series-Menu-2.jpg" alt="Snack Menu 2">
-        <img src="10.-Snack-Series-Menu-3.jpg" alt="Snack Menu 3">
-        <img src="11.-Coffee-Series.jpg" alt="Coffee Series">
-        <img src="12.-Coffee-Series-Menu-1.jpg" alt="Coffee Menu 1">
-        <img src="13.-Non-Coffee-Series.jpg" alt="Non Coffee Series">
-        <img src="14.-Non-Coffee-Series-Menu-1.jpg" alt="Non Coffee Menu 1">
-        <img src="15.-Closing-Page.jpg" alt="Closing Page">
+        <img src="1.-Cover.jpg">
+        <img src="3.-Food-Series.jpg">
+        <img src="4.-Food-Series-Menu-1.jpg">
+        <img src="5.-Food-Series-Menu-2.jpg">
+        <img src="6.-Food-Series-Menu-3.jpg">
+        <img src="7.-Snack-Series.jpg">
+        <img src="8.-Snack-Series-Menu-1.jpg">
+        <img src="9.-Snack-Series-Menu-2.jpg">
+        <img src="10.-Snack-Series-Menu-3.jpg">
+        <img src="11.-Coffee-Series.jpg">
+        <img src="12.-Coffee-Series-Menu-1.jpg">
+        <img src="13.-Non-Coffee-Series.jpg">
+        <img src="14.-Non-Coffee-Series-Menu-1.jpg">
+        <img src="15.-Closing-Page.jpg">
 
     </div>
 
 </section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -485,7 +534,7 @@ footer{
 
         <div>
 
-            <img src="Logo-Meramai2.png" class="footer-logo" alt="Logo Footer">
+            <img src="Logo-Meramai2.png" class="footer-logo">
 
             <div class="footer-text">
                 Sebuah tempat untuk menikmati kopi,
