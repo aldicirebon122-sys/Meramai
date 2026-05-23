@@ -1,356 +1,541 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meramai | Official Website</title>
-    <style>
-        /* --- RESET & GOOGLE FONTS --- */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<title>MERAMAI Coffee & Eatery</title>
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.7;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        h1, h2, h3, .logo-text {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-        }
+<style>
 
-        :root {
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --dark: #1A1A1A;
-            --light-bg: #FAFAFA;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* --- NAVBAR --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-        }
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
 
-        .nav-logo img {
-            height: 50px; /* Logo-Meramai2.png */
-        }
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f5ef;
+    overflow-x:hidden;
+    color:#222;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+/* ================= NAVBAR ================= */
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:14px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.15);
+    backdrop-filter:blur(2px);
+}
 
-        .nav-links a:hover {
-            color: var(--gold);
-        }
+.logo-left{
+    width:42px;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: url('1.-Cover.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            margin-top: 60px;
-        }
+.nav-menu{
+    display:flex;
+    gap:16px;
+}
 
-        /* Overlay gelap tipis agar teks terbaca */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
+.nav-menu a{
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    font-weight:500;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-            max-width: 800px;
-            padding: 20px;
-        }
+/* ================= HERO ================= */
 
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
+.hero-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 
-        .btn-gold {
-            background-color: var(--gold);
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
 
-        .btn-gold:hover {
-            background-color: #b5952f;
-        }
+.hero-content{
+    position:relative;
+    z-index:5;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 24px 80px;
+}
 
-        /* --- LAYOUT UTAMA --- */
-        .section {
-            padding: 100px 10%;
-        }
+.hero-main-logo{
+    width:100%;
+    max-width:280px; /* Ukuran logo di HP */
+    margin-bottom:32px;
+    object-fit:contain;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
+.hero-desc{
+    color:white;
+    font-size:17px;
+    line-height:2;
+    max-width:340px;
+}
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--gold);
-            font-style: italic;
-            margin-bottom: 60px;
-            font-size: 1.1rem;
-        }
+/* ================= SECTION ================= */
 
-        /* --- ABOUT US --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
+section{
+    padding:70px 22px;
+}
 
-        .about-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+.section-sub{
+    text-align:center;
+    color:#c9a256;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:12px;
+}
 
-        .about-images img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+.section-title{
+    text-align:center;
+    font-size:38px;
+    font-family:'Cormorant Garamond',serif;
+    margin-bottom:40px;
+}
 
-        .about-images img:hover {
-            transform: scale(1.03);
-        }
+/* ================= ABOUT ================= */
 
-        /* --- MENU SECTION --- */
-        .menu-category {
-            margin-bottom: 80px;
-        }
+.about{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+    align-items:center;
+}
 
-        .menu-category-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.about img{
+    width:100%;
+    border-radius:24px;
+}
 
-        .menu-category-header img {
-            max-width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            border: 2px solid var(--gold-light);
-        }
+.about-text h3{
+    font-size:38px;
+    margin-bottom:16px;
+    font-family:'Cormorant Garamond',serif;
+}
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.about-line{
+    width:70px;
+    height:2px;
+    background:#c9a256;
+    margin-bottom:20px;
+}
 
-        .menu-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #eee;
-        }
+.about-text p{
+    color:#666;
+    line-height:2;
+}
 
-        .menu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
+/* ================= GALLERY ================= */
 
-        .menu-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+}
 
-        /* --- CONTACT / CLOSING --- */
-        .contact-bg {
-            background-color: var(--light-bg);
-            text-align: center;
-        }
+.gallery-grid img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:22px;
+}
 
-        .contact-bg img {
-            max-width: 800px;
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
+/* ================= CONTACT ================= */
 
-        /* --- FOOTER --- */
-        footer {
-            background: var(--dark);
-            color: #fff;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
+.contact-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+}
 
-        footer span {
-            color: var(--gold);
-        }
+.contact-card{
+    background:white;
+    border-radius:24px;
+    padding:28px 24px;
+    border:1px solid #eee3cf;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .nav-links { display: none; } /* Sembunyikan menu di HP agar simpel */
-            nav { justify-content: center; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .section { padding: 60px 5%; }
-        }
-    </style>
+.contact-card h3{
+    font-size:34px;
+    margin-bottom:18px;
+    color:#c9a256;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.contact-card p{
+    color:#777;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+.contact-card span{
+    color:#c9a256;
+    font-weight:700;
+    font-size:20px;
+}
+
+/* ================= MENU ================= */
+
+.menu-wrapper{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+}
+
+.menu-wrapper img{
+    width:100%;
+    border-radius:24px;
+    display:block;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111;
+    padding:60px 24px 30px;
+    color:white;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:34px;
+}
+
+.footer-logo{
+    width:170px;
+    margin-bottom:16px;
+}
+
+.footer-title{
+    color:#c9a256;
+    font-size:26px;
+    margin-bottom:14px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.footer-text{
+    color:#ddd;
+    line-height:2;
+    font-size:14px;
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:768px){
+
+    .nav-menu{
+        gap:28px;
+    }
+
+    .hero-main-logo{
+        max-width:450px; /* Ukuran logo di Laptop/PC */
+    }
+
+    .hero-desc{
+        max-width:650px;
+        font-size:18px;
+    }
+
+    .about{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .contact-row{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .menu-wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+}
+
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-logo">
-            <img src="Logo-Meramai2.png" alt="Meramai Logo" onerror="this.src='https://via.placeholder.com/150x50?text=MERAMAI'">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Meramai</h1>
-            <p>Nikmati suasana yang nyaman dan hidangan lezat dengan pelayanan terbaik.</p>
-            <a href="#menu" class="btn-gold">LIHAT MENU</a>
-        </div>
-    </section>
+    <img src="Logo-Meramai1.png" class="logo-left" alt="Logo Kiri">
 
-    <section id="about" class="section">
-        <h2 class="section-title">Cerita Kami</h2>
-        <p class="section-subtitle">Mengenal lebih dekat suasana Meramai</p>
-        
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>Tentang Meramai</h3>
-                <br>
-                <p>Meramai hadir sebagai ruang berkumpul yang menyajikan pengalaman kuliner tak terlupakan. Dengan desain interior yang elegan dan suasana yang hangat, tempat ini dirancang khusus untuk Anda yang mencari kenyamanan.</p>
-                <br>
-                <img src="2.-About-Us.jpg" alt="About Us" style="width:100%; border-radius:8px; margin-top:20px;">
-            </div>
-            <div class="about-images">
-                <img src="Front_Building.png" alt="Tampak Depan">
-                <img src="Front_Left.png" alt="Tampak Kiri">
-                <img src="Interior-Bar.png" alt="Interior Bar" style="grid-column: span 2;">
-            </div>
-        </div>
-    </section>
+    <div class="nav-menu">
+        <a href="#home">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#menu">Menu</a>
+        <a href="#kontak">Kontak</a>
+    </div>
 
-    <section id="menu" class="section" style="background-color: #fafafa;">
-        <h2 class="section-title">Menu Spesial</h2>
-        <p class="section-subtitle">Dibuat dengan bahan pilihan terbaik</p>
+</nav>
 
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <img src="3.-Food-Series.jpg" alt="Food Series Header">
-            </div>
-            <div class="menu-grid">
-                <div class="menu-card"><img src="4.-Food-Series-Menu-1.jpg" alt="Food Menu 1"></div>
-                <div class="menu-card"><img src="5.-Food-Series-Menu-2.jpg" alt="Food Menu 2"></div>
-                <div class="menu-card"><img src="6.-Food-Series-Menu-3.jpg" alt="Food Menu 3"></div>
-            </div>
+<section class="hero" id="home">
+
+    <img src="Front_Building.png" class="hero-bg" alt="Background">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <img src="Logo-Meramai1.png" class="hero-main-logo" alt="Logo Utama Meramai">
+
+        <p class="hero-desc">
+            Sebuah tempat untuk menikmati kopi,
+            makanan, dan suasana hangat dalam
+            ruang yang nyaman dan elegan.
+        </p>
+
         </div>
 
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <img src="7.-Snack-Series.jpg" alt="Snack Series Header">
-            </div>
-            <div class="menu-grid">
-                <div class="menu-card"><img src="8.-Snack-Series-Menu-1.jpg" alt="Snack Menu 1"></div>
-                <div class="menu-card"><img src="9.-Snack-Series-Menu-2.jpg" alt="Snack Menu 2"></div>
-                <div class="menu-card"><img src="10.-Snack-Series-Menu-3.jpg" alt="Snack Menu 3"></div>
-            </div>
+</section>
+
+<section id="tentang">
+
+    <div class="section-sub">
+        TENTANG
+    </div>
+
+    <div class="section-title">
+        MERAMAI
+    </div>
+
+    <div class="about">
+
+        <img src="2.-About-Us.jpg" alt="Tentang Meramai">
+
+        <div class="about-text">
+
+            <h3>
+                Meramai Coffee & Eatery
+            </h3>
+
+            <div class="about-line"></div>
+
+            <p>
+                Tempat di mana rasa, suasana,
+                dan cerita bertemu dalam satu meja.
+                Kami hadir memberikan pengalaman
+                bersantai yang hangat, nyaman,
+                modern, dan berkesan.
+            </p>
+
         </div>
 
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <img src="11.-Coffee-Series.jpg" alt="Coffee Series Header">
+    </div>
+
+</section>
+
+<section id="gallery">
+
+    <div class="section-sub">
+        GALLERY
+    </div>
+
+    <div class="section-title">
+        Suasana Meramai
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="Interior-Bar.png" alt="Interior">
+        <img src="Front_Left.png" alt="Tampak Kiri">
+        <img src="Front_Building.png" alt="Tampak Depan">
+
+    </div>
+
+</section>
+
+<section id="kontak">
+
+    <div class="section-sub">
+        KONTAK
+    </div>
+
+    <div class="section-title">
+        Hubungi Kami
+    </div>
+
+    <div class="contact-row">
+
+        <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank" class="contact-card">
+
+            <h3>Instagram</h3>
+
+            <p>
+                Ikuti update terbaru
+                dari Meramai Coffee.
+            </p>
+
+            <span>@meramai.id</span>
+
+        </a>
+
+        <a href="https://wa.me/628981243869" target="_blank" class="contact-card">
+
+            <h3>WhatsApp</h3>
+
+            <p>
+                Reservasi dan informasi
+                lebih lanjut.
+            </p>
+
+            <span>0898-1243-869</span>
+
+        </a>
+
+        <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank" class="contact-card">
+
+            <h3>Location</h3>
+
+            <p>
+                Jl. Semambu No.88,
+                Kabupaten Cirebon.
+            </p>
+
+            <span>Open Maps</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<section id="menu">
+
+    <div class="section-sub">
+        MENU
+    </div>
+
+    <div class="section-title">
+        Menu Meramai
+    </div>
+
+    <div class="menu-wrapper">
+
+        <img src="1.-Cover.jpg" alt="Cover Menu">
+        <img src="3.-Food-Series.jpg" alt="Food Series">
+        <img src="4.-Food-Series-Menu-1.jpg" alt="Food Menu 1">
+        <img src="5.-Food-Series-Menu-2.jpg" alt="Food Menu 2">
+        <img src="6.-Food-Series-Menu-3.jpg" alt="Food Menu 3">
+        <img src="7.-Snack-Series.jpg" alt="Snack Series">
+        <img src="8.-Snack-Series-Menu-1.jpg" alt="Snack Menu 1">
+        <img src="9.-Snack-Series-Menu-2.jpg" alt="Snack Menu 2">
+        <img src="10.-Snack-Series-Menu-3.jpg" alt="Snack Menu 3">
+        <img src="11.-Coffee-Series.jpg" alt="Coffee Series">
+        <img src="12.-Coffee-Series-Menu-1.jpg" alt="Coffee Menu 1">
+        <img src="13.-Non-Coffee-Series.jpg" alt="Non Coffee Series">
+        <img src="14.-Non-Coffee-Series-Menu-1.jpg" alt="Non Coffee Menu 1">
+        <img src="15.-Closing-Page.jpg" alt="Closing Page">
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <img src="Logo-Meramai2.png" class="footer-logo" alt="Logo Footer">
+
+            <div class="footer-text">
+                Sebuah tempat untuk menikmati kopi,
+                makanan, dan kebersamaan.
             </div>
-            <div class="menu-grid" style="justify-content: center; display: flex;">
-                <div class="menu-card" style="max-width: 400px;"><img src="12.-Coffee-Series-Menu-1.jpg" alt="Coffee Menu 1"></div>
-            </div>
+
         </div>
 
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <img src="13.-Non-Coffee-Series.jpg" alt="Non Coffee Series Header">
+        <div>
+
+            <div class="footer-title">
+                Jam Operasional
             </div>
-            <div class="menu-grid" style="justify-content: center; display: flex;">
-                <div class="menu-card" style="max-width: 400px;"><img src="14.-Non-Coffee-Series-Menu-1.jpg" alt="Non Coffee Menu 1"></div>
+
+            <div class="footer-text">
+                Selasa - Sabtu<br>
+                17:00 - 23:00
             </div>
+
         </div>
-    </section>
 
-    <section id="contact" class="section contact-bg">
-        <h2 class="section-title">Kunjungi Kami</h2>
-        <p class="section-subtitle">Kami menantikan kedatangan Anda</p>
-        <img src="15.-Closing-Page.jpg" alt="Closing & Contact Info">
-    </section>
+        <div>
 
-    <footer>
-        <p>&copy; 2024 <span>Meramai</span>. All Rights Reserved.</p>
-    </footer>
+            <div class="footer-title">
+                Kontak
+            </div>
+
+            <div class="footer-text">
+                0898-1243-869<br>
+                @meramai.id
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="footer-title">
+                Lokasi
+            </div>
+
+            <div class="footer-text">
+                Jl. Semambu No.88<br>
+                Kabupaten Cirebon
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
