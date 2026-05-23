@@ -18,7 +18,7 @@
     }
 
     body{
-      background:#f7f4ee;
+      background:#f8f6f1;
       color:#111;
       overflow-x:hidden;
     }
@@ -35,7 +35,7 @@
     }
 
     ::-webkit-scrollbar-thumb{
-      background:#b89452;
+      background:#c8a96b;
       border-radius:20px;
     }
 
@@ -44,7 +44,7 @@
     #popup{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.72);
+      background:rgba(255,255,255,0.75);
       backdrop-filter:blur(10px);
       display:flex;
       justify-content:center;
@@ -55,12 +55,13 @@
 
     .popup-box{
       width:90%;
-      max-width:420px;
-      background:rgba(255,255,255,0.92);
-      border-radius:35px;
+      max-width:430px;
+      background:white;
+      border:1px solid rgba(200,169,107,0.18);
+      border-radius:38px;
       padding:45px 35px;
       text-align:center;
-      box-shadow:0 25px 60px rgba(0,0,0,0.25);
+      box-shadow:0 20px 60px rgba(0,0,0,0.08);
       animation:popupUp 1s;
     }
 
@@ -71,44 +72,43 @@
     }
 
     .popup-title{
-      font-size:38px;
-      letter-spacing:6px;
-      margin-bottom:12px;
+      font-size:36px;
+      letter-spacing:5px;
+      margin-bottom:14px;
       color:#111;
     }
 
     .popup-text{
-      color:#8d6b2f;
-      line-height:1.7;
+      color:#9a7b47;
+      line-height:1.8;
       margin-bottom:30px;
     }
 
     .popup-btn{
-      background:#111;
-      color:white;
       border:none;
-      padding:15px 32px;
+      background:linear-gradient(135deg,#c8a96b,#e2c48b);
+      color:white;
+      padding:15px 34px;
       border-radius:999px;
-      font-size:15px;
       cursor:pointer;
       transition:0.35s;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      font-size:15px;
+      box-shadow:0 12px 25px rgba(200,169,107,0.25);
     }
 
     .popup-btn:hover{
       transform:translateY(-3px);
-      background:#b89452;
     }
 
     /* HERO */
 
     .hero{
-      position:relative;
       height:100vh;
+      position:relative;
       overflow:hidden;
     }
 
-    .hero img{
+    .hero-bg{
       width:100%;
       height:100vh;
       object-fit:cover;
@@ -117,11 +117,11 @@
       animation:zoomHero 12s infinite alternate;
     }
 
-    .overlay{
+    .hero-overlay{
       position:absolute;
       inset:0;
       background:linear-gradient(to bottom,
-      rgba(0,0,0,0.2),
+      rgba(255,255,255,0.05),
       rgba(0,0,0,0.55));
     }
 
@@ -133,29 +133,23 @@
       justify-content:center;
       align-items:center;
       text-align:center;
-      padding:20px;
       color:white;
+      padding:20px;
       z-index:2;
     }
 
     .hero-logo{
-      width:140px;
+      width:500px;
+      max-width:90%;
       margin-bottom:25px;
-      animation:fadeUp 1.4s;
-    }
-
-    .hero-title{
-      font-size:68px;
-      letter-spacing:8px;
-      margin-bottom:15px;
-      animation:fadeUp 1.8s;
+      animation:fadeUp 1.5s;
     }
 
     .hero-subtitle{
-      color:#e7d3a3;
+      color:#f0dcb1;
       font-size:18px;
       margin-bottom:35px;
-      animation:fadeUp 2.2s;
+      animation:fadeUp 2s;
     }
 
     .hero-buttons{
@@ -163,55 +157,55 @@
       gap:14px;
       flex-wrap:wrap;
       justify-content:center;
-      animation:fadeUp 2.6s;
+      animation:fadeUp 2.5s;
     }
 
     .hero-buttons a{
       text-decoration:none;
       color:white;
-      padding:15px 26px;
+      padding:15px 28px;
       border-radius:999px;
-      background:rgba(255,255,255,0.14);
-      border:1px solid rgba(255,255,255,0.2);
-      backdrop-filter:blur(6px);
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(8px);
       transition:0.35s;
-      font-size:15px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
     }
 
     .hero-buttons a:hover{
       background:white;
-      color:black;
+      color:#111;
       transform:translateY(-3px);
     }
 
     /* SECTION */
 
     .section{
-      max-width:1300px;
+      max-width:1350px;
       margin:auto;
       padding:110px 24px;
     }
 
     .section-title{
       text-align:center;
-      font-size:44px;
-      color:#8d6b2f;
-      margin-bottom:60px;
+      font-size:46px;
+      color:#b89255;
+      margin-bottom:65px;
       position:relative;
+      font-weight:600;
     }
 
     .section-title::after{
       content:"";
       width:90px;
       height:3px;
-      background:#b89452;
+      background:#d5b378;
       display:block;
       margin:18px auto 0;
       border-radius:20px;
     }
 
-    /* OUR PLACE */
+    /* GALLERY */
 
     .gallery{
       display:grid;
@@ -222,96 +216,90 @@
     .gallery img{
       height:420px;
       object-fit:cover;
-      border-radius:30px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+      border-radius:32px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.08);
       transition:0.4s;
+      border:1px solid rgba(200,169,107,0.12);
     }
 
     .gallery img:hover{
       transform:translateY(-8px) scale(1.02);
     }
 
-    /* MENU */
+    /* CARD */
 
-    .menu-wrapper{
-      display:flex;
-      justify-content:center;
-    }
-
-    .menu-card{
+    .card{
       width:100%;
-      max-width:900px;
+      max-width:950px;
+      margin:auto;
       background:white;
-      border-radius:35px;
+      border-radius:38px;
       overflow:hidden;
-      box-shadow:0 18px 50px rgba(0,0,0,0.08);
-      transition:0.4s;
+      box-shadow:0 18px 55px rgba(0,0,0,0.06);
+      border:1px solid rgba(200,169,107,0.1);
+      transition:0.35s;
     }
 
-    .menu-card:hover{
-      transform:translateY(-6px);
-    }
-
-    .menu-card img{
-      width:100%;
+    .card:hover{
+      transform:translateY(-5px);
     }
 
     /* FOOTER */
 
     footer{
-      background:#111;
-      color:white;
-      padding:90px 24px;
+      background:white;
+      padding:100px 24px;
       text-align:center;
+      border-top:1px solid rgba(200,169,107,0.12);
     }
 
     .footer-logo{
       width:90px;
       margin:auto;
-      margin-bottom:25px;
+      margin-bottom:30px;
     }
 
     .footer-title{
       font-size:34px;
       letter-spacing:5px;
-      margin-bottom:12px;
-      color:#e7d3a3;
+      color:#b89255;
+      margin-bottom:14px;
     }
 
-    .footer-desc{
-      color:#cfcfcf;
-      margin-bottom:35px;
+    .footer-sub{
+      color:#777;
       line-height:1.8;
+      margin-bottom:40px;
     }
 
-    .footer-contact{
+    .footer-buttons{
       display:flex;
       justify-content:center;
-      flex-wrap:wrap;
       gap:15px;
-      margin-bottom:35px;
+      flex-wrap:wrap;
     }
 
-    .footer-contact a{
+    .footer-buttons a{
       text-decoration:none;
-      color:white;
+      color:#111;
       padding:14px 24px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.15);
+      border:1px solid rgba(200,169,107,0.18);
       transition:0.35s;
-      background:rgba(255,255,255,0.05);
+      background:#fff;
+      box-shadow:0 10px 25px rgba(0,0,0,0.04);
     }
 
-    .footer-contact a:hover{
-      background:white;
-      color:black;
+    .footer-buttons a:hover{
+      background:#c8a96b;
+      color:white;
       transform:translateY(-3px);
     }
 
     .copyright{
-      color:#888;
+      margin-top:40px;
+      color:#999;
       font-size:14px;
-      margin-top:20px;
     }
 
     /* ANIMATION */
@@ -356,16 +344,16 @@
 
     @media(max-width:768px){
 
-      .hero-title{
-        font-size:42px;
-      }
-
       .section-title{
-        font-size:32px;
+        font-size:34px;
       }
 
       .gallery img{
         height:300px;
+      }
+
+      .popup-title{
+        font-size:30px;
       }
 
     }
@@ -381,10 +369,10 @@
 
     <div class="popup-box">
 
-      <img src="logo-meramai.png" class="popup-logo">
+      <img src="Logo-Meramai1.png" class="popup-logo">
 
       <div class="popup-title">
-        MERAMAI
+        Welcome
       </div>
 
       <div class="popup-text">
@@ -404,17 +392,13 @@
 
   <section class="hero">
 
-    <img src="Front_Building.png">
+    <img src="Front_Building.png" class="hero-bg">
 
-    <div class="overlay"></div>
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-      <img src="logo-meramai.png" class="hero-logo">
-
-      <div class="hero-title">
-        MERAMAI
-      </div>
+      <img src="Logo-Meramai2.png" class="hero-logo">
 
       <div class="hero-subtitle">
         Sebuah titik temu untuk semua.
@@ -468,12 +452,8 @@
       About MERAMAI
     </div>
 
-    <div class="menu-wrapper">
-
-      <div class="menu-card">
-        <img src="2.-About-Us.jpg">
-      </div>
-
+    <div class="card">
+      <img src="2.-About-Us.jpg">
     </div>
 
   </section>
@@ -486,24 +466,22 @@
       Our Menu
     </div>
 
-    <div class="menu-wrapper">
+    <div class="card">
 
-      <div class="menu-card">
-        <img src="1.-Cover.jpg">
-        <img src="3.-Food-Series.jpg">
-        <img src="4.-Food-Series-Menu-1.jpg">
-        <img src="5.-Food-Series-Menu-2.jpg">
-        <img src="6.-Food-Series-Menu-3.jpg">
-        <img src="7.-Snack-Series.jpg">
-        <img src="8.-Snack-Series-Menu-1.jpg">
-        <img src="9.-Snack-Series-Menu-2.jpg">
-        <img src="10.-Snack-Series-Menu-3.jpg">
-        <img src="11.-Coffee-Series.jpg">
-        <img src="12.-Coffee-Series-Menu-1.jpg">
-        <img src="13.-Non-Coffee-Series.jpg">
-        <img src="14.-Non-Coffee-Series-Menu-1.jpg">
-        <img src="15.-Closing-Page.jpg">
-      </div>
+      <img src="1.-Cover.jpg">
+      <img src="3.-Food-Series.jpg">
+      <img src="4.-Food-Series-Menu-1.jpg">
+      <img src="5.-Food-Series-Menu-2.jpg">
+      <img src="6.-Food-Series-Menu-3.jpg">
+      <img src="7.-Snack-Series.jpg">
+      <img src="8.-Snack-Series-Menu-1.jpg">
+      <img src="9.-Snack-Series-Menu-2.jpg">
+      <img src="10.-Snack-Series-Menu-3.jpg">
+      <img src="11.-Coffee-Series.jpg">
+      <img src="12.-Coffee-Series-Menu-1.jpg">
+      <img src="13.-Non-Coffee-Series.jpg">
+      <img src="14.-Non-Coffee-Series-Menu-1.jpg">
+      <img src="15.-Closing-Page.jpg">
 
     </div>
 
@@ -513,18 +491,18 @@
 
   <footer>
 
-    <img src="logo-meramai.png" class="footer-logo">
+    <img src="Logo-Meramai1.png" class="footer-logo">
 
     <div class="footer-title">
       MERAMAI
     </div>
 
-    <div class="footer-desc">
+    <div class="footer-sub">
       Coffee & Eatery<br>
       Cirebon, Indonesia
     </div>
 
-    <div class="footer-contact">
+    <div class="footer-buttons">
 
       <a href="https://wa.me/628981243869" target="_blank">
         WhatsApp
@@ -537,16 +515,6 @@
       <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
         Google Maps
       </a>
-
-    </div>
-
-    <div class="footer-desc">
-
-      📍 Meramai Coffee & Eatery<br><br>
-
-      📞 0898-1243-869<br><br>
-
-      Instagram : @meramai.id
 
     </div>
 
