@@ -2,11 +2,10 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MERAMAI Coffee & Eatery</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -20,9 +19,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#f8f5ef;
+background:#f5f2eb;
+color:#444;
 overflow-x:hidden;
-color:#222;
 }
 
 /* NAVBAR */
@@ -34,81 +33,60 @@ left:0;
 width:100%;
 height:78px;
 background:rgba(255,255,255,.96);
-backdrop-filter:blur(10px);
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 18px;
+padding:0 16px;
 z-index:999;
-border-bottom:1px solid rgba(201,161,93,.15);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(0,0,0,.05);
 }
 
 .logo{
-width:56px;
+width:42px;
 object-fit:contain;
 }
 
-.nav-menu{
+.nav-links{
 display:flex;
-gap:18px;
+gap:16px;
 }
 
-.nav-menu a{
+.nav-links a{
 text-decoration:none;
-font-size:14px;
+font-size:13px;
 font-weight:600;
-color:#c8a15d;
-font-family:'Poppins',sans-serif;
+color:#c9a75d;
 }
 
 /* HERO */
 
 .hero{
-position:relative;
-width:100%;
 height:100vh;
-overflow:hidden;
-}
-
-.hero .bg{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.28);
+background:
+linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
+url('art.jpg') center center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 24px 60px;
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 28px;
+max-width:700px;
 }
 
 .hero-logo{
-width:145px;
-margin-bottom:30px;
-object-fit:contain;
+width:260px;
+margin-bottom:35px;
 }
 
 .hero-text{
 font-size:17px;
 line-height:2;
-font-weight:300;
 color:#fff;
-max-width:340px;
+font-weight:300;
 }
 
 /* SECTION */
@@ -124,40 +102,48 @@ margin-bottom:38px;
 
 .section-title span{
 font-size:12px;
-letter-spacing:6px;
-color:#c8a15d;
+letter-spacing:5px;
+color:#c9a75d;
 }
 
 .section-title h2{
 font-family:'Cormorant Garamond',serif;
 font-size:58px;
-font-weight:600;
-color:#c8a15d;
-margin-top:10px;
+color:#c9a75d;
+margin-top:8px;
 }
 
 /* ABOUT */
 
-.about-image{
+.about-card{
+background:#fff;
+border-radius:32px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.about-card img{
 width:100%;
-border-radius:28px;
 display:block;
-margin-bottom:28px;
 object-fit:contain;
 background:#fff;
 }
 
-.about-text h3{
-font-family:'Cormorant Garamond',serif;
-font-size:48px;
-line-height:1.1;
-color:#c8a15d;
-margin-bottom:20px;
+.about-content{
+padding:28px;
 }
 
-.about-text p{
+.about-content h3{
+font-family:'Cormorant Garamond',serif;
+font-size:52px;
+line-height:1.1;
+color:#c9a75d;
+margin-bottom:18px;
+}
+
+.about-content p{
 font-size:15px;
-line-height:2.1;
+line-height:2;
 color:#666;
 }
 
@@ -171,7 +157,7 @@ gap:18px;
 
 .gallery-grid img{
 width:100%;
-border-radius:22px;
+border-radius:26px;
 display:block;
 }
 
@@ -183,73 +169,48 @@ flex-direction:column;
 gap:24px;
 }
 
-.menu-card{
-background:#fff;
-padding:20px;
-border-radius:26px;
-box-shadow:0 8px 25px rgba(0,0,0,.05);
-}
-
-.menu-card img{
+.full-menu{
 width:100%;
-border-radius:18px;
-margin-bottom:16px;
-}
-
-.menu-card h3{
-font-family:'Cormorant Garamond',serif;
-font-size:34px;
-color:#c8a15d;
-margin-bottom:10px;
-}
-
-.menu-card p{
-font-size:14px;
-line-height:1.9;
-color:#777;
+display:block;
+border-radius:30px;
+box-shadow:0 8px 24px rgba(0,0,0,.05);
 }
 
 /* CONTACT */
 
 .contact-grid{
 display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:10px;
+grid-template-columns:1fr 1fr;
+gap:14px;
 margin-top:10px;
 }
 
-.contact-box{
+.contact-card{
 background:#fff;
-border-radius:22px;
-padding:16px 10px;
-text-align:center;
-min-height:120px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-box-shadow:0 5px 18px rgba(0,0,0,.04);
+padding:20px;
+border-radius:24px;
+box-shadow:0 8px 20px rgba(0,0,0,.04);
 }
 
-.contact-box h4{
+.contact-card h4{
 font-family:'Cormorant Garamond',serif;
-font-size:20px;
-color:#c8a15d;
+font-size:28px;
+color:#c9a75d;
 margin-bottom:10px;
 }
 
-.contact-box p{
-font-size:10px;
-line-height:1.7;
+.contact-card p{
+font-size:13px;
+line-height:1.9;
 color:#666;
-word-break:break-word;
 }
 
 /* FOOTER */
 
 .footer{
 background:#fff;
-padding:42px 22px;
-border-top:1px solid rgba(201,161,93,.15);
+padding:55px 24px 35px;
+margin-top:50px;
 }
 
 .footer-grid{
@@ -258,76 +219,49 @@ grid-template-columns:1fr 1fr;
 gap:28px;
 }
 
-.footer-item h4{
+.footer-box h3{
 font-family:'Cormorant Garamond',serif;
-font-size:18px;
-font-weight:600;
-line-height:1.3;
-color:#c8a15d;
-margin-bottom:10px;
+font-size:24px;
+color:#c9a75d;
+margin-bottom:12px;
 }
 
-.footer-item p{
-font-size:11px;
+.footer-box p{
+font-size:13px;
 line-height:2;
 color:#666;
-font-family:'Poppins',sans-serif;
 }
 
-.copy{
-margin-top:30px;
+.copyright{
+margin-top:35px;
 text-align:center;
-font-size:10px;
-color:#aaa;
+font-size:12px;
+color:#999;
 }
 
 /* MOBILE */
 
-@media(max-width:430px){
-
-.navbar{
-padding:0 14px;
-}
-
-.logo{
-width:52px;
-}
-
-.nav-menu{
-gap:14px;
-}
-
-.nav-menu a{
-font-size:13px;
-}
+@media(max-width:480px){
 
 .hero-logo{
-width:130px;
+width:300px;
 }
 
 .hero-text{
-font-size:16px;
-line-height:1.9;
+font-size:15px;
+line-height:2.1;
 }
 
 .section-title h2{
 font-size:50px;
 }
 
-.about-text h3{
-font-size:42px;
+.about-content h3{
+font-size:44px;
 }
 
-.menu-card h3{
-font-size:30px;
-}
-
-.footer-item h4{
-font-size:16px;
-}
-
-.footer-item p{
-font-size:10px;
+.contact-card h4{
+font-size:24px;
 }
 
 }
@@ -343,12 +277,12 @@ font-size:10px;
 
 <img src="Logo-Meramai1.png" class="logo">
 
-<div class="nav-menu">
+<div class="nav-links">
 <a href="#home">Beranda</a>
-<a href="#tentang">Tentang</a>
-<a href="#galeri">Galeri</a>
+<a href="#about">Tentang</a>
+<a href="#gallery">Galeri</a>
 <a href="#menu">Menu</a>
-<a href="#kontak">Kontak</a>
+<a href="#contact">Kontak</a>
 </div>
 
 </nav>
@@ -356,10 +290,6 @@ font-size:10px;
 <!-- HERO -->
 
 <section class="hero" id="home">
-
-<img src="art.jpg" class="bg">
-
-<div class="overlay"></div>
 
 <div class="hero-content">
 
@@ -377,26 +307,28 @@ ruang yang nyaman dan elegan.
 
 <!-- ABOUT -->
 
-<section class="section" id="tentang">
+<section class="section" id="about">
 
 <div class="section-title">
 <span>TENTANG</span>
 <h2>MERAMAI</h2>
 </div>
 
-<img src="2.-About-Us.jpg" class="about-image">
+<div class="about-card">
 
-<div class="about-text">
+<img src="2.-About-Us.jpg">
+
+<div class="about-content">
 
 <h3>Meramai Coffee & Eatery</h3>
 
 <p>
-Tempat di mana rasa, suasana,
-dan cerita bertemu dalam satu meja.
-Kami hadir memberikan pengalaman
-bersantai yang hangat, nyaman,
-dan berkesan untuk setiap momen.
+Tempat di mana rasa, suasana, dan cerita bertemu dalam satu meja.
+Kami hadir memberikan pengalaman bersantai yang hangat,
+nyaman, dan modern untuk setiap momen kebersamaan.
 </p>
+
+</div>
 
 </div>
 
@@ -404,11 +336,11 @@ dan berkesan untuk setiap momen.
 
 <!-- GALLERY -->
 
-<section class="section" id="galeri">
+<section class="section" id="gallery">
 
 <div class="section-title">
 <span>GALERI</span>
-<h2>Suasana</h2>
+<h2>Suasana Meramai</h2>
 </div>
 
 <div class="gallery-grid">
@@ -427,46 +359,36 @@ dan berkesan untuk setiap momen.
 
 <div class="section-title">
 <span>MENU</span>
-<h2>Food Series</h2>
+<h2>Menu Meramai</h2>
 </div>
 
 <div class="menu-wrap">
 
-<div class="menu-card">
-<img src="4.-Food-Series-Menu-1.jpg">
-<h3>Food Series</h3>
-<p>
-Menu makanan pilihan dengan tampilan premium
-dan cita rasa hangat khas Meramai.
-</p>
-</div>
+<img src="3.-Food-Series.jpg" class="full-menu">
 
-<div class="menu-card">
-<img src="8.-Snack-Series-Menu-1.jpg">
-<h3>Snack Series</h3>
-<p>
-Teman santai untuk menikmati suasana sore
-dan malam bersama kopi favorit.
-</p>
-</div>
+<img src="4.-Food-Series-Menu-1.jpg" class="full-menu">
 
-<div class="menu-card">
-<img src="12.-Coffee-Series-Menu-1.jpg">
-<h3>Coffee Series</h3>
-<p>
-Perpaduan kopi premium dengan tampilan
-elegan dan rasa yang berkesan.
-</p>
-</div>
+<img src="5.-Food-Series-Menu-2.jpg" class="full-menu">
 
-<div class="menu-card">
-<img src="14.-Non-Coffee-Series-Menu-1.jpg">
-<h3>Non Coffee</h3>
-<p>
-Minuman creamy dan fresh dengan sentuhan
-modern khas Meramai.
-</p>
-</div>
+<img src="6.-Food-Series-Menu-3.jpg" class="full-menu">
+
+<img src="7.-Snack-Series.jpg" class="full-menu">
+
+<img src="8.-Snack-Series-Menu-1.jpg" class="full-menu">
+
+<img src="9.-Snack-Series-Menu-2.jpg" class="full-menu">
+
+<img src="10.-Snack-Series-Menu-3.jpg" class="full-menu">
+
+<img src="11.-Coffee-Series.jpg" class="full-menu">
+
+<img src="12.-Coffee-Series-Menu-1.jpg" class="full-menu">
+
+<img src="13.-Non-Coffee-Series.jpg" class="full-menu">
+
+<img src="14.-Non-Coffee-Series-Menu-1.jpg" class="full-menu">
+
+<img src="15.-Closing-Page.jpg" class="full-menu">
 
 </div>
 
@@ -474,7 +396,7 @@ modern khas Meramai.
 
 <!-- CONTACT -->
 
-<section class="section" id="kontak">
+<section class="section" id="contact">
 
 <div class="section-title">
 <span>KONTAK</span>
@@ -483,19 +405,24 @@ modern khas Meramai.
 
 <div class="contact-grid">
 
-<div class="contact-box">
+<div class="contact-card">
 <h4>Instagram</h4>
 <p>@meramai.id</p>
 </div>
 
-<div class="contact-box">
+<div class="contact-card">
 <h4>WhatsApp</h4>
 <p>0898-1243-869</p>
 </div>
 
-<div class="contact-box">
+<div class="contact-card">
 <h4>Lokasi</h4>
-<p>Jl. Semambu No.88</p>
+<p>Jl. Semambu No.88 Kabupaten Cirebon</p>
+</div>
+
+<div class="contact-card">
+<h4>Jam Operasional</h4>
+<p>Selasa - Sabtu<br>17:00 - 23:00</p>
 </div>
 
 </div>
@@ -508,41 +435,41 @@ modern khas Meramai.
 
 <div class="footer-grid">
 
-<div class="footer-item">
-<h4>Jam Operasional</h4>
+<div class="footer-box">
+<h3>MERAMAI</h3>
 <p>
-Selasa - Sabtu<br>
-17:00 - 23:00
+Coffee & Eatery dengan suasana hangat,
+modern, dan elegan.
 </p>
 </div>
 
-<div class="footer-item">
-<h4>Kontak</h4>
+<div class="footer-box">
+<h3>Kontak</h3>
 <p>
 0898-1243-869<br>
 @meramai.id
 </p>
 </div>
 
-<div class="footer-item">
-<h4>Lokasi</h4>
+<div class="footer-box">
+<h3>Lokasi</h3>
 <p>
 Jl. Semambu No.88<br>
 Kabupaten Cirebon
 </p>
 </div>
 
-<div class="footer-item">
-<h4>MERAMAI</h4>
+<div class="footer-box">
+<h3>Jam Operasional</h3>
 <p>
-Coffee & Eatery dengan suasana
-hangat, modern, dan elegan.
+Selasa - Sabtu<br>
+17:00 - 23:00
 </p>
 </div>
 
 </div>
 
-<div class="copy">
+<div class="copyright">
 © 2025 MERAMAI Coffee & Eatery
 </div>
 
