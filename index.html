@@ -2,297 +2,464 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>MERAMAI Coffee & Eatery</title>
 
+  <!-- PAGE FLIP -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css"/>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:Arial,sans-serif;
     }
 
-    body {
-      background: #f8f6f1;
-      color: #111;
-      overflow-x: hidden;
+    html,
+    body{
+      overflow-x:hidden;
+      overscroll-behavior:none;
+      background:#faf8f4;
+      color:#111;
     }
 
-    img {
-      width: 100%;
-      display: block;
+    img{
+      width:100%;
+      display:block;
     }
 
-    /* WELCOME POPUP */
+    /* SCROLLBAR */
 
-    #welcome-popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      animation: fadeIn 1s;
+    ::-webkit-scrollbar{
+      width:8px;
     }
 
-    .popup-box {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 30px;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    ::-webkit-scrollbar-thumb{
+      background:#d2b073;
+      border-radius:20px;
     }
 
-    .popup-logo {
-      width: 120px;
-      margin: auto;
-      margin-bottom: 20px;
+    /* POPUP */
+
+    #popup{
+      position:fixed;
+      inset:0;
+      background:rgba(255,255,255,0.72);
+      backdrop-filter:blur(12px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      animation:fadeIn 1s;
     }
 
-    .popup-title {
-      font-size: 32px;
-      letter-spacing: 4px;
-      margin-bottom: 10px;
+    .popup-box{
+      width:90%;
+      max-width:410px;
+      background:white;
+      border-radius:38px;
+      padding:48px 35px;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,0.08);
+      animation:popupUp 1s;
     }
 
-    .popup-subtitle {
-      color: #8d6b2f;
-      margin-bottom: 25px;
+    .popup-logo{
+      width:115px;
+      margin:auto;
+      margin-bottom:28px;
     }
 
-    .enter-btn {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
+    .popup-title{
+      font-size:36px;
+      letter-spacing:4px;
+      margin-bottom:14px;
+      color:#111;
     }
 
-    .enter-btn:hover {
-      opacity: 0.85;
+    .popup-text{
+      color:#a27d45;
+      line-height:1.9;
+      margin-bottom:34px;
+      font-size:15px;
+    }
+
+    .popup-btn{
+      border:none;
+      background:linear-gradient(135deg,#c8a96b,#e1c58f);
+      color:white;
+      padding:15px 34px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:0.35s;
+      font-size:15px;
+      box-shadow:0 10px 25px rgba(200,169,107,0.22);
+    }
+
+    .popup-btn:hover{
+      transform:translateY(-3px);
     }
 
     /* HERO */
 
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
+    .hero{
+      position:relative;
+      height:100vh;
+      overflow:hidden;
     }
 
-    .hero img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      filter: brightness(0.75);
+    .hero-bg{
+      width:100%;
+      height:100vh;
+      object-fit:cover;
+      animation:zoomHero 12s infinite alternate;
     }
 
-    .hero-content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.35));
     }
 
-    .hero-logo {
-      width: 140px;
-      margin-bottom: 20px;
+    .hero-content{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      color:white;
     }
 
-    .hero-title {
-      font-size: 55px;
-      letter-spacing: 5px;
-      margin-bottom: 15px;
+    .hero-logo{
+      width:120px;
+      margin-bottom:30px;
+      animation:fadeUp 1.4s;
     }
 
-    .hero-subtitle {
-      font-size: 18px;
-      color: #e7d3a3;
-      margin-bottom: 30px;
+    .hero-title{
+      font-size:74px;
+      font-weight:600;
+      letter-spacing:8px;
+      margin-bottom:18px;
+      text-shadow:0 10px 30px rgba(0,0,0,0.25);
+      animation:fadeUp 1.8s;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
+    .hero-desc{
+      color:#f6e3bd;
+      line-height:2;
+      font-size:17px;
+      margin-bottom:42px;
+      animation:fadeUp 2.2s;
     }
 
-    .hero-buttons a {
-      text-decoration: none;
-      color: white;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 14px 26px;
-      border-radius: 999px;
-      backdrop-filter: blur(5px);
-      transition: 0.3s;
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+      animation:fadeUp 2.6s;
     }
 
-    .hero-buttons a:hover {
-      background: white;
-      color: black;
+    .hero-buttons a{
+      text-decoration:none;
+      color:white;
+      padding:14px 26px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      transition:0.35s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+      font-size:15px;
+    }
+
+    .hero-buttons a:hover{
+      background:white;
+      color:#111;
+      transform:translateY(-3px);
     }
 
     /* SECTION */
 
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 20px;
+    .section{
+      max-width:1350px;
+      margin:auto;
+      padding:120px 24px;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 40px;
-      margin-bottom: 50px;
-      color: #8d6b2f;
+    .section-title{
+      text-align:center;
+      font-size:44px;
+      color:#bc9454;
+      margin-bottom:70px;
+      position:relative;
+      font-weight:600;
+    }
+
+    .section-title::after{
+      content:"";
+      width:90px;
+      height:3px;
+      background:#d8b77c;
+      display:block;
+      margin:18px auto 0;
+      border-radius:20px;
     }
 
     /* GALLERY */
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
     }
 
-    .gallery img {
-      border-radius: 25px;
-      height: 350px;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: 0.4s;
+    .gallery img{
+      height:430px;
+      object-fit:cover;
+      border-radius:34px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.08);
+      transition:0.4s;
     }
 
-    .gallery img:hover {
-      transform: translateY(-5px);
-    }
-
-    /* MENU */
-
-    .menu-card {
-      background: white;
-      border-radius: 30px;
-      overflow: hidden;
-      margin-bottom: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .menu-card img {
-      width: 100%;
+    .gallery img:hover{
+      transform:translateY(-8px) scale(1.02);
     }
 
     /* ABOUT */
 
-    .about-box {
-      background: white;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .about-card{
+      width:100%;
+      max-width:950px;
+      margin:auto;
+      background:white;
+      border-radius:38px;
+      overflow:hidden;
+      box-shadow:0 18px 55px rgba(0,0,0,0.06);
+    }
+
+    /* MENU BUTTON */
+
+    .menu-button-box{
+      text-align:center;
+    }
+
+    .menu-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      padding:18px 36px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#c8a96b,#e1c58f);
+      color:white;
+      font-size:16px;
+      transition:0.35s;
+      box-shadow:0 12px 28px rgba(200,169,107,0.24);
+    }
+
+    .menu-button:hover{
+      transform:translateY(-5px);
+    }
+
+    /* FLIPBOOK */
+
+    .flipbook-section{
+      padding:120px 24px;
+    }
+
+    #flipbook{
+      width:100%;
+      max-width:1000px;
+      height:700px;
+      margin:auto;
+      touch-action:pan-y;
+    }
+
+    .page{
+      background:white;
+      overflow:hidden;
+    }
+
+    .page img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .blank-page{
+      width:100%;
+      height:100%;
+      background:#faf8f4;
     }
 
     /* FOOTER */
 
-    footer {
-      padding: 60px 20px;
-      text-align: center;
-      background: #111;
-      color: white;
+    footer{
+      background:white;
+      padding:110px 24px;
+      text-align:center;
+      border-top:1px solid rgba(200,169,107,0.12);
     }
 
-    .footer-title {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #e7d3a3;
+    .footer-logo{
+      width:90px;
+      margin:auto;
+      margin-bottom:28px;
     }
 
-    .footer-links {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+    .footer-title{
+      font-size:34px;
+      color:#bc9454;
+      letter-spacing:5px;
+      margin-bottom:16px;
     }
 
-    .footer-links a {
-      text-decoration: none;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 12px 22px;
-      border-radius: 999px;
-      transition: 0.3s;
+    .footer-desc{
+      color:#777;
+      line-height:2;
+      margin-bottom:40px;
     }
 
-    .footer-links a:hover {
-      background: white;
-      color: black;
+    .footer-buttons{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
+    .footer-buttons a{
+      text-decoration:none;
+      color:#111;
+      padding:14px 24px;
+      border-radius:999px;
+      border:1px solid rgba(200,169,107,0.18);
+      transition:0.35s;
+      background:white;
+      box-shadow:0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .footer-buttons a:hover{
+      background:#c8a96b;
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    .copyright{
+      margin-top:42px;
+      color:#999;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+
+    @keyframes popupUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes zoomHero{
+      from{
+        transform:scale(1.05);
+      }
+      to{
+        transform:scale(1.12);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero-logo{
+        width:100px;
       }
 
-      to {
-        opacity: 1;
+      .hero-title{
+        font-size:42px;
+        letter-spacing:4px;
       }
+
+      .hero-desc{
+        font-size:15px;
+        line-height:1.9;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+      .gallery img{
+        height:300px;
+      }
+
+      #flipbook{
+        height:520px;
+      }
+
     }
 
-    @media (max-width: 768px) {
-
-      .hero-title {
-        font-size: 38px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .gallery img {
-        height: 250px;
-      }
-
-    }
   </style>
+
 </head>
 
 <body>
 
-  <!-- WELCOME POPUP -->
+  <!-- POPUP -->
 
-  <div id="welcome-popup">
+  <div id="popup">
 
     <div class="popup-box">
 
-      <img src="logo-meramai.jpg" class="popup-logo">
+      <img src="Logo-Meramai1.png" class="popup-logo">
 
       <div class="popup-title">
-        MERAMAI
+        Welcome
       </div>
 
-      <div class="popup-subtitle">
-        Coffee & Eatery
+      <div class="popup-text">
+        Selamat datang di<br>
+        MERAMAI Coffee & Eatery
       </div>
 
-      <button class="enter-btn" onclick="closePopup()">
-        Explore
+      <button class="popup-btn" onclick="closePopup()">
+        Explore Now
       </button>
 
     </div>
@@ -303,31 +470,40 @@
 
   <section class="hero">
 
-    <img src="Front_Building.jpg">
+    <img src="Front_Building.png" class="hero-bg">
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-      <img src="logo-meramai.jpg" class="hero-logo">
+      <img src="Logo-Meramai1.png" class="hero-logo">
 
       <div class="hero-title">
         MERAMAI
       </div>
 
-      <div class="hero-subtitle">
-        Sebuah titik temu untuk semua.
+      <div class="hero-desc">
+
+        Coffee & Eatery
+
+        <br><br>
+
+        Sebuah titik temu
+        untuk semua.
+
       </div>
 
       <div class="hero-buttons">
 
-        <a href="https://instagram.com/" target="_blank">
+        <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
           Instagram
         </a>
 
-        <a href="https://wa.me/" target="_blank">
+        <a href="https://wa.me/628981243869" target="_blank">
           WhatsApp
         </a>
 
-        <a href="https://maps.google.com/" target="_blank">
+        <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
           Maps
         </a>
 
@@ -337,7 +513,7 @@
 
   </section>
 
-  <!-- GALLERY -->
+  <!-- OUR PLACE -->
 
   <section class="section">
 
@@ -347,11 +523,11 @@
 
     <div class="gallery">
 
-      <img src="Front_Left.jpg">
+      <img src="Front_Building.png">
 
-      <img src="Interior-Bar.jpg">
+      <img src="Front_Left.png">
 
-      <img src="1.-Cover.jpg">
+      <img src="Interior-Bar.png">
 
     </div>
 
@@ -365,106 +541,104 @@
       About MERAMAI
     </div>
 
-    <div class="about-box">
+    <div class="about-card">
+
       <img src="2.-About-Us.jpg">
+
     </div>
 
   </section>
 
-  <!-- FOOD -->
+  <!-- MENU BUTTON -->
 
   <section class="section">
 
     <div class="section-title">
-      Food Series
+      Explore Our Menu
     </div>
 
-    <div class="menu-card">
-      <img src="3.-Food-Series.jpg">
-    </div>
+    <div class="menu-button-box">
 
-    <div class="menu-card">
-      <img src="4.-Food-Series-Menu-1.jpg">
-    </div>
+      <a href="#menu-book" class="menu-button">
+        Open Menu Book
+      </a>
 
-    <div class="menu-card">
-      <img src="5.-Food-Series-Menu-2.jpg">
-    </div>
-
-    <div class="menu-card">
-      <img src="6.-Food-Series-Menu-3.jpg">
     </div>
 
   </section>
 
-  <!-- SNACK -->
+  <!-- FLIPBOOK -->
 
-  <section class="section">
+  <section class="flipbook-section" id="menu-book">
 
     <div class="section-title">
-      Snack Series
+      Digital Menu Book
     </div>
 
-    <div class="menu-card">
-      <img src="7.-Snack-Series.jpg">
-    </div>
+    <div id="flipbook">
 
-    <div class="menu-card">
-      <img src="8.-Snack-Series-Menu-1.jpg">
-    </div>
+      <div class="page">
+        <img src="1.-Cover.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="9.-Snack-Series-Menu-2.jpg">
-    </div>
+      <div class="page">
+        <img src="3.-Food-Series.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="10.-Snack-Series-Menu-3.jpg">
-    </div>
+      <div class="page">
+        <img src="4.-Food-Series-Menu-1.jpg">
+      </div>
 
-  </section>
+      <div class="page">
+        <img src="5.-Food-Series-Menu-2.jpg">
+      </div>
 
-  <!-- COFFEE -->
+      <div class="page">
+        <img src="6.-Food-Series-Menu-3.jpg">
+      </div>
 
-  <section class="section">
+      <div class="page">
+        <img src="7.-Snack-Series.jpg">
+      </div>
 
-    <div class="section-title">
-      Coffee Series
-    </div>
+      <div class="page">
+        <img src="8.-Snack-Series-Menu-1.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="11.-Coffee-Series.jpg">
-    </div>
+      <div class="page">
+        <img src="9.-Snack-Series-Menu-2.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="12.-Coffee-Series-Menu-1.jpg">
-    </div>
+      <div class="page">
+        <img src="10.-Snack-Series-Menu-3.jpg">
+      </div>
 
-  </section>
+      <div class="page">
+        <img src="11.-Coffee-Series.jpg">
+      </div>
 
-  <!-- NON COFFEE -->
+      <div class="page">
+        <img src="12.-Coffee-Series-Menu-1.jpg">
+      </div>
 
-  <section class="section">
+      <div class="page">
+        <img src="13.-Non-Coffee-Series.jpg">
+      </div>
 
-    <div class="section-title">
-      Non Coffee Series
-    </div>
+      <div class="page">
+        <img src="14.-Non-Coffee-Series-Menu-1.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="13.-Non-Coffee-Series.jpg">
-    </div>
+      <div class="page">
+        <img src="15.-Closing-Page.jpg">
+      </div>
 
-    <div class="menu-card">
-      <img src="14.-Non-Coffee-Series-Menu-1.jpg">
-    </div>
+      <!-- BLANK PAGE -->
 
-  </section>
+      <div class="page">
+        <div class="blank-page"></div>
+      </div>
 
-  <!-- CLOSING -->
-
-  <section class="section">
-
-    <div class="menu-card">
-      <img src="15.-Closing-Page.jpg">
     </div>
 
   </section>
@@ -473,37 +647,84 @@
 
   <footer>
 
+    <img src="Logo-Meramai1.png" class="footer-logo">
+
     <div class="footer-title">
-      MERAMAI Coffee & Eatery
+      MERAMAI
     </div>
 
-    <p>
+    <div class="footer-desc">
+
+      Coffee & Eatery<br>
       Cirebon, Indonesia
-    </p>
 
-    <div class="footer-links">
+    </div>
 
-      <a href="https://instagram.com/" target="_blank">
-        Instagram
-      </a>
+    <div class="footer-buttons">
 
-      <a href="https://wa.me/" target="_blank">
+      <a href="https://wa.me/628981243869" target="_blank">
         WhatsApp
       </a>
 
-      <a href="https://maps.google.com/" target="_blank">
+      <a href="https://www.instagram.com/meramai.id?igsh=MXZtOGJ6anFxamFwcw==" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://share.google/yVHG6HqLW44uP4ZxJ" target="_blank">
         Google Maps
       </a>
 
     </div>
 
+    <div class="copyright">
+      © 2026 MERAMAI Coffee & Eatery
+    </div>
+
   </footer>
+
+  <!-- SCRIPT -->
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 
   <script>
 
-    function closePopup() {
-      document.getElementById("welcome-popup").style.display = "none";
+    function closePopup(){
+      document.getElementById("popup").style.display = "none";
     }
+
+    const pageFlip = new St.PageFlip(
+      document.getElementById("flipbook"),
+      {
+        width:500,
+        height:700,
+
+        size:"stretch",
+
+        minWidth:315,
+        maxWidth:1000,
+
+        minHeight:420,
+        maxHeight:1350,
+
+        showCover:true,
+
+        maxShadowOpacity:0.5,
+
+        mobileScrollSupport:false,
+
+        usePortrait:true,
+
+        autoSize:true,
+
+        drawShadow:true,
+
+        flippingTime:800
+      }
+    );
+
+    pageFlip.loadFromHTML(
+      document.querySelectorAll(".page")
+    );
 
   </script>
 
