@@ -3,273 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Resmi Meramai - Tema Emas</title>
+    <title>Meramai | Official Website</title>
     <style>
-        /* --- RESET DASAR --- */
+        /* --- RESET & GOOGLE FONTS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Georgia', 'serif'; /* Font yang terkesan elegan */
-            background-color: #fbfbfb; /* Latar belakang putih gading sangat muda */
-            color: #333333; /* Warna teks utama abu-abu gelap agar kontras */
-            line-height: 1.6;
+            font-family: 'Lato', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.7;
         }
 
-        /* --- TEMA WARNA EMAS --- */
+        h1, h2, h3, .logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
         :root {
-            --primary-gold: #BFA35B; /* Warna emas utama untuk aksen */
-            --accent-gold: #C0A04D;  /* Warna emas sedikit lebih cerah untuk hover */
-            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --dark: #1A1A1A;
+            --light-bg: #FAFAFA;
         }
 
-        /* --- KELAS UTILITAS --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
-        .gold-border {
-            border: 2px solid var(--primary-gold);
+        .nav-logo img {
+            height: 50px; /* Logo-Meramai2.png */
         }
 
-        .gold-text {
-            color: var(--primary-gold);
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
         }
 
-        /* --- HEADER / LOGO --- */
-        header {
-            background-color: var(--white);
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid var(--primary-gold);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
-        header img.logo {
-            max-height: 80px; /* Ukuran logo placeholder */
-            width: auto;
+        .nav-links a:hover {
+            color: var(--gold);
         }
 
-        /* --- HERO / COVER SECTION --- */
+        /* --- HERO SECTION --- */
         .hero {
-            background-color: #fdfdfd; /* Putih sedikit lebih cerah */
-            padding: 80px 0;
+            height: 100vh;
+            background: url('1.-Cover.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            position: relative;
+            margin-top: 60px;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        /* Overlay gelap tipis agar teks terbaca */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
             margin-bottom: 20px;
-            color: var(--primary-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero img.cover-image {
-            max-width: 90%;
-            height: auto;
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #b5952f;
+        }
+
+        /* --- LAYOUT UTAMA --- */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+
+        /* --- ABOUT US --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .about-images img {
+            width: 100%;
             border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        /* --- SECTION ABOUT US --- */
-        .about-us {
-            background-color: var(--white);
-            padding: 60px 0;
-            border-top: 1px solid rgba(191, 163, 91, 0.2); /* Garis emas sangat tipis */
+        .about-images img:hover {
+            transform: scale(1.03);
         }
 
-        .about-us h2 {
+        /* --- MENU SECTION --- */
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .menu-category-header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .about-content img {
-            max-width: 45%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        /* --- MENU / CATEGORIES SECTION --- */
-        .categories {
-            background-color: #fefefe;
-            padding: 60px 0;
-        }
-
-        .categories h2 {
-            text-align: center;
-            margin-bottom: 50px;
+        .menu-category-header img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--gold-light);
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .menu-item {
-            background: var(--white);
-            padding: 25px;
+        .menu-card {
+            background: #fff;
             border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(191, 163, 91, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
         }
 
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        .menu-item h3 {
-            margin-bottom: 15px;
-        }
-
-        .menu-item img {
-            max-width: 100%;
+        .menu-card img {
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            display: block;
         }
 
-        /* --- CLOSING PAGE / KONTAK --- */
-        .closing {
-            background-color: var(--white);
-            padding: 60px 0;
+        /* --- CONTACT / CLOSING --- */
+        .contact-bg {
+            background-color: var(--light-bg);
             text-align: center;
-            border-top: 2px solid var(--primary-gold);
         }
 
-        .closing h2 {
-            margin-bottom: 40px;
-        }
-
-        .closing img.closing-image {
-            max-width: 60%;
-            height: auto;
+        .contact-bg img {
+            max-width: 800px;
+            width: 100%;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #333333; /* Footer gelap untuk kontras */
-            color: var(--white);
+            background: var(--dark);
+            color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 20px;
+            font-size: 0.9rem;
         }
 
-        /* --- RESPONSIVE (MOBILE) --- */
+        footer span {
+            color: var(--gold);
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about-content img {
-                max-width: 80%;
-            }
-
-            .closing img.closing-image {
-                max-width: 90%;
-            }
+            .nav-links { display: none; } /* Sembunyikan menu di HP agar simpel */
+            nav { justify-content: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <img src="Logo-Meramai2.png" alt="Logo Meramai" class="logo">
+    <nav>
+        <div class="nav-logo">
+            <img src="Logo-Meramai2.png" alt="Meramai Logo" onerror="this.src='https://via.placeholder.com/150x50?text=MERAMAI'">
         </div>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1 class="gold-text">Selamat Datang di Meramai</h1>
-            <img src="1.-Cover.jpg" alt="Halaman Depan Meramai" class="cover-image gold-border">
-            <p>Temukan pengalaman tak terlupakan di tempat kami.</p>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Meramai</h1>
+            <p>Nikmati suasana yang nyaman dan hidangan lezat dengan pelayanan terbaik.</p>
+            <a href="#menu" class="btn-gold">LIHAT MENU</a>
         </div>
     </section>
 
-    <section class="about-us">
-        <div class="container">
-            <h2 class="gold-text">Tentang Kami</h2>
-            <div class="about-content">
-                <img src="Interior-Bar.png" alt="Interior Meramai" class="gold-border">
-                <div class="about-text">
-                    <p>
-                        Ini adalah halaman deskripsi tentang Meramai. Anda dapat mengisinya dengan sejarah, visi, atau apa pun yang ingin Anda sampaikan kepada pengunjung. 
-                        Teks ini hanyalah placeholder dan dapat Anda ganti dengan informasi yang relevan.
-                    </p>
-                </div>
+    <section id="about" class="section">
+        <h2 class="section-title">Cerita Kami</h2>
+        <p class="section-subtitle">Mengenal lebih dekat suasana Meramai</p>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Tentang Meramai</h3>
+                <br>
+                <p>Meramai hadir sebagai ruang berkumpul yang menyajikan pengalaman kuliner tak terlupakan. Dengan desain interior yang elegan dan suasana yang hangat, tempat ini dirancang khusus untuk Anda yang mencari kenyamanan.</p>
+                <br>
+                <img src="2.-About-Us.jpg" alt="About Us" style="width:100%; border-radius:8px; margin-top:20px;">
+            </div>
+            <div class="about-images">
+                <img src="Front_Building.png" alt="Tampak Depan">
+                <img src="Front_Left.png" alt="Tampak Kiri">
+                <img src="Interior-Bar.png" alt="Interior Bar" style="grid-column: span 2;">
             </div>
         </div>
     </section>
 
-    <section class="categories">
-        <div class="container">
-            <h2 class="gold-text">Menu Pilihan Kami</h2>
+    <section id="menu" class="section" style="background-color: #fafafa;">
+        <h2 class="section-title">Menu Spesial</h2>
+        <p class="section-subtitle">Dibuat dengan bahan pilihan terbaik</p>
+
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <img src="3.-Food-Series.jpg" alt="Food Series Header">
+            </div>
             <div class="menu-grid">
-                
-                <div class="menu-item gold-border">
-                    <h3>Food Series</h3>
-                    <img src="3.-Food-Series.jpg" alt="Placeholder Menu Makanan">
-                    <p>Serangkaian menu makanan lezat untuk menemani waktu santai Anda.</p>
-                </div>
+                <div class="menu-card"><img src="4.-Food-Series-Menu-1.jpg" alt="Food Menu 1"></div>
+                <div class="menu-card"><img src="5.-Food-Series-Menu-2.jpg" alt="Food Menu 2"></div>
+                <div class="menu-card"><img src="6.-Food-Series-Menu-3.jpg" alt="Food Menu 3"></div>
+            </div>
+        </div>
 
-                <div class="menu-item gold-border">
-                    <h3>Snack Series</h3>
-                    <img src="7.-Snack-Series.jpg" alt="Placeholder Menu Camilan">
-                    <p>Pilihan camilan ringan yang pas untuk dinikmati kapan saja.</p>
-                </div>
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <img src="7.-Snack-Series.jpg" alt="Snack Series Header">
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card"><img src="8.-Snack-Series-Menu-1.jpg" alt="Snack Menu 1"></div>
+                <div class="menu-card"><img src="9.-Snack-Series-Menu-2.jpg" alt="Snack Menu 2"></div>
+                <div class="menu-card"><img src="10.-Snack-Series-Menu-3.jpg" alt="Snack Menu 3"></div>
+            </div>
+        </div>
 
-                <div class="menu-item gold-border">
-                    <h3>Coffee Series</h3>
-                    <img src="11.-Coffee-Series.jpg" alt="Placeholder Menu Kopi">
-                    <p>Racikan kopi pilihan dengan rasa dan aroma yang khas.</p>
-                </div>
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <img src="11.-Coffee-Series.jpg" alt="Coffee Series Header">
+            </div>
+            <div class="menu-grid" style="justify-content: center; display: flex;">
+                <div class="menu-card" style="max-width: 400px;"><img src="12.-Coffee-Series-Menu-1.jpg" alt="Coffee Menu 1"></div>
+            </div>
+        </div>
 
-                <div class="menu-item gold-border">
-                    <h3>Non-Coffee Series</h3>
-                    <img src="13.-Non-Coffee-Series.jpg" alt="Placeholder Menu Non-Kopi">
-                    <p>Minuman segar non-kopi bagi Anda yang menginginkan variasi.</p>
-                </div>
-
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <img src="13.-Non-Coffee-Series.jpg" alt="Non Coffee Series Header">
+            </div>
+            <div class="menu-grid" style="justify-content: center; display: flex;">
+                <div class="menu-card" style="max-width: 400px;"><img src="14.-Non-Coffee-Series-Menu-1.jpg" alt="Non Coffee Menu 1"></div>
             </div>
         </div>
     </section>
 
-    <section class="closing">
-        <div class="container">
-            <h2 class="gold-text">Halaman Penutup & Kontak</h2>
-            <img src="15.-Closing-Page.jpg" alt="Informasi Kontak Meramai" class="closing-image gold-border">
-            <p style="margin-top: 20px;">Halaman ini dapat berisi kontak, peta lokasi, atau penutup istimewa untuk pengunjung.</p>
-        </div>
+    <section id="contact" class="section contact-bg">
+        <h2 class="section-title">Kunjungi Kami</h2>
+        <p class="section-subtitle">Kami menantikan kedatangan Anda</p>
+        <img src="15.-Closing-Page.jpg" alt="Closing & Contact Info">
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Meramai. Seluruh hak cipta dilindungi.</p>
-        </div>
+        <p>&copy; 2024 <span>Meramai</span>. All Rights Reserved.</p>
     </footer>
 
 </body>
